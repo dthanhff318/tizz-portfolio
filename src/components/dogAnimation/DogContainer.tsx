@@ -12,7 +12,11 @@ type TForwardedRef = ForwardedRef<HTMLDivElement>;
 
 export const DogContainer = forwardRef(
 	({ children }: TProps, ref: TForwardedRef) => (
-		<div ref={ref} className="fixed top-8 left-2/4 -translate-x-1/2 z-50">
+		<div
+			ref={ref}
+			className="flex justify-center -mt-20"
+			id="dog-three-container"
+		>
 			{children}
 		</div>
 	)
