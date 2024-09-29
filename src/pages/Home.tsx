@@ -10,7 +10,7 @@ const Home = () => {
 		const dogContainer = document.querySelector("#dog-three-container");
 		if (dogContainer && titleRef.current) {
 			const rectDogContainer = dogContainer.getBoundingClientRect().top;
-			titleRef.current.style.top = `${rectDogContainer - 60}px`;
+			titleRef.current.style.top = `${rectDogContainer}px`;
 		}
 	}, []);
 
@@ -18,7 +18,7 @@ const Home = () => {
 		<div className="relative flex justify-center bg-background w-full h-full text-center flex-col items-center gap-12">
 			<div
 				ref={titleRef}
-				className="absolute text-center left-1/2 -translate-x-1/2 text-text-color space-y-3"
+				className="absolute text-center left-1/2 -translate-x-1/2 text-text-color space-y-3 "
 			>
 				<p className="sm:text-md xl:text-xl">
 					I'm a web developer in Viet Nam 😎 !
@@ -46,6 +46,8 @@ const Home = () => {
 					alt="me"
 				/>
 			</div>
+
+			{/* Introduce */}
 			<div className="mockup-code w-[60%]">
 				<div className="px-4 text-left">
 					<pre data-prefix="#" className="text-success uppercase">
@@ -64,6 +66,24 @@ const Home = () => {
 								dthanhff318@gmail.com
 							</a>
 						</code>
+					</pre>
+				</div>
+			</div>
+
+			{/* Techstack */}
+			<div className="mockup-code w-[60%]">
+				<div className="px-4 text-left">
+					<pre data-prefix="#" className="text-success uppercase">
+						<code>✨✨✨ Tech stack:</code>
+					</pre>
+					<pre data-prefix=">" className="text-warning">
+						<code>FE: ReactJS , NextJS</code>
+					</pre>
+					<pre data-prefix=">" className="text-rose-500">
+						<code>BE: ExpressJS, NestJS</code>
+					</pre>
+					<pre data-prefix=">" className="text-cyan-400">
+						<code>Database: MongoDB, PostgreSQL</code>
 					</pre>
 				</div>
 			</div>

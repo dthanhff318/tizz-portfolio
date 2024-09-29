@@ -1,15 +1,16 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { ETheme } from "../../helpers/enum";
+import EPath from "../../routes/path";
+import appConfigStore from "../../store/appConfigStore";
 import {
 	DarkIcon,
 	FolderIcon,
 	GithubIcon,
+	GmailIcon,
 	HomeIcon,
 	LightIcon,
 } from "./navbar.icon";
-import EPath from "../../routes/path";
-import { useNavigate } from "react-router-dom";
-import { ETheme } from "../../helpers/enum";
-import appConfigStore from "../../store/appConfigStore";
 
 const DEFAULT_WiDTH = 65;
 const MIN_WIDTH = 45;
@@ -43,6 +44,12 @@ const useNavbarServices = () => {
 			title: "Github",
 			icon: GithubIcon,
 			onClick: () => window.open("https://github.com/dthanhff318"),
+		},
+		{
+			key: "contact",
+			title: "Contact",
+			icon: GmailIcon,
+			onClick: () => navigate(EPath.Contact),
 		},
 		{
 			key: "light",

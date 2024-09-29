@@ -45,17 +45,25 @@ const Layout = (): FunctionComponent => {
 			<div className="absolute font-semibold top-4 left-4 text-text-color flex gap-4 items-center">
 				{location ? location : <div className="skeleton h-4 w-20"></div>}
 				{time ? (
-					<span className="countdown font-semibold">
-						<span style={{ "--value": time?.getHours() }}></span>:
-						<span style={{ "--value": time?.getMinutes() }}></span>:
-						<span style={{ "--value": time?.getSeconds() }}></span>
-					</span>
+					<div className="countdown font-semibold">
+						<span
+							style={{ "--value": time?.getHours() } as React.CSSProperties}
+						></span>
+						:
+						<span
+							style={{ "--value": time?.getMinutes() } as React.CSSProperties}
+						></span>
+						:
+						<span
+							style={{ "--value": time?.getSeconds() } as React.CSSProperties}
+						></span>
+					</div>
 				) : (
 					<div className="skeleton h-4 w-20"></div>
 				)}
 				<ClockIcon />
 			</div>
-			<div className="w-[100vw] h-fit -mt-32 flex items-center">
+			<div className="relative w-full h-fit -mt-32 flex items-center z-10 mb-20">
 				<Outlet />
 			</div>
 		</div>
