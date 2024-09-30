@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { loadGLTFModel } from "./dog.model";
-import { DogSpinner, DogContainer } from "./DogContainer";
+import { DogContainer, DogSpinner } from "./DogContainer";
 
-function easeOutCirc(x) {
+function easeOutCirc(x: number) {
 	return Math.sqrt(1 - Math.pow(x - 1, 4));
 }
 
@@ -36,7 +36,7 @@ const DogAnimation = () => {
 			});
 			renderer.setPixelRatio(window.devicePixelRatio);
 			renderer.setSize(scW, scH);
-			renderer.outputEncoding = THREE.sRGBEncoding;
+			(renderer as any).outputEncoding = (THREE as any).sRGBEncoding;
 			container.appendChild(renderer.domElement);
 			refRenderer.current = renderer;
 			const scene = new THREE.Scene();
@@ -77,7 +77,7 @@ const DogAnimation = () => {
 				setLoading(false);
 			});
 
-			let req = null;
+			let req: number | null = null;
 			let frame = 0;
 			const animate = () => {
 				req = requestAnimationFrame(animate);
@@ -102,7 +102,7 @@ const DogAnimation = () => {
 			};
 
 			return () => {
-				cancelAnimationFrame(req);
+				cancelAnimationFrame(req ?? 0);
 				renderer.domElement.remove();
 				renderer.dispose();
 			};

@@ -104,7 +104,7 @@ const useNavbarServices = () => {
 		handleResizeElement(indexData);
 	};
 
-	const handleMouseOut = (e: any) => {
+	const handleMouseOut = () => {
 		const timeOut = setTimeout(() => {
 			const navElements = document.querySelectorAll(".nav-item");
 			navElements.forEach((ele) => {
@@ -115,7 +115,7 @@ const useNavbarServices = () => {
 		triggerRef.current.timeOut = timeOut;
 	};
 
-	const handleMouseOutNav = (e: any) => {
+	const handleMouseOutNav = () => {
 		const navElements = document.querySelectorAll(".nav-item");
 		navElements.forEach((ele) => {
 			(ele as HTMLDivElement).style.width = `${MIN_WIDTH}px`;

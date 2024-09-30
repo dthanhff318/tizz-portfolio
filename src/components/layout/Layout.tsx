@@ -4,9 +4,6 @@ import { FunctionComponent } from "../../common/types";
 import DogAnimation from "../dogAnimation/DogAnimation";
 import Navbar from "../navbar/Navbar";
 import ClockIcon from "../ui/icons/ClockIcon";
-type TProps = {
-	children: ReactNode;
-};
 
 const Layout = (): FunctionComponent => {
 	const [time, setTime] = useState<Date | undefined>(undefined);
