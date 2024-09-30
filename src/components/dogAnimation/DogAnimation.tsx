@@ -26,87 +26,84 @@ const DogAnimation = () => {
 
 	useEffect(() => {
 		const { current: container } = refContainer;
-		if (container) {
-			const scW = 640;
-			const scH = 640;
+		if (!container) return;
+		const scW = 640;
+		const scH = 640;
 
-			const renderer = new THREE.WebGLRenderer({
-				antialias: true,
-				alpha: true,
-			});
-			renderer.setPixelRatio(window.devicePixelRatio);
-			renderer.setSize(scW, scH);
-			(renderer as any).outputEncoding = (THREE as any).sRGBEncoding;
-			container.appendChild(renderer.domElement);
-			refRenderer.current = renderer;
-			const scene = new THREE.Scene();
+		const renderer = new THREE.WebGLRenderer({
+			antialias: true,
+			alpha: true,
+		});
+		renderer.setPixelRatio(window.devicePixelRatio);
+		renderer.setSize(scW, scH);
+		(renderer as any).outputEncoding = (THREE as any).sRGBEncoding;
+		container.appendChild(renderer.domElement);
+		refRenderer.current = renderer;
+		const scene = new THREE.Scene();
 
-			const target = new THREE.Vector3(-0.5, 1.2, 0);
-			const initialCameraPosition = new THREE.Vector3(
-				20 * Math.sin(0.2 * Math.PI),
-				10,
-				20 * Math.cos(0.2 * Math.PI)
-			);
+		const target = new THREE.Vector3(-0.5, 1.2, 0);
+		const initialCameraPosition = new THREE.Vector3(
+			20 * Math.sin(0.2 * Math.PI),
+			10,
+			20 * Math.cos(0.2 * Math.PI)
+		);
 
-			// 640 -> 240
-			// 8   -> 6
-			const scale = scH * 0.005 + 4.8;
-			const camera = new THREE.OrthographicCamera(
-				-scale,
-				scale,
-				scale,
-				-scale,
-				0.01,
-				50000
-			);
-			camera.position.copy(initialCameraPosition);
-			camera.lookAt(target);
+		// 640 -> 240
+		// 8   -> 6
+		const scale = scH * 0.005 + 4.8;
+		const camera = new THREE.OrthographicCamera(
+			-scale,
+			scale,
+			scale,
+			-scale,
+			0.01,
+			50000
+		);
+		camera.position.copy(initialCameraPosition);
+		camera.lookAt(target);
 
-			const ambientLight = new THREE.AmbientLight(0xcccccc, Math.PI);
-			scene.add(ambientLight);
+		const ambientLight = new THREE.AmbientLight(0xcccccc, Math.PI);
+		scene.add(ambientLight);
 
-			const controls = new OrbitControls(camera, renderer.domElement);
-			controls.autoRotate = true;
-			controls.target = target;
+		const controls = new OrbitControls(camera, renderer.domElement);
+		controls.autoRotate = true;
+		controls.target = target;
 
-			loadGLTFModel(scene, urlDogGLB, {
-				receiveShadow: false,
-				castShadow: false,
-			}).then(() => {
-				animate();
-				setLoading(false);
-			});
+		loadGLTFModel(scene, urlDogGLB, {
+			receiveShadow: false,
+			castShadow: false,
+		}).then(() => {
+			animate();
+			setLoading(false);
+		});
 
-			let req: number | null = null;
-			let frame = 0;
-			const animate = () => {
-				req = requestAnimationFrame(animate);
+		let req: number | null = null;
+		let frame = 0;
+		const animate = () => {
+			req = requestAnimationFrame(animate);
 
-				frame = frame <= 100 ? frame + 1 : frame;
+			frame = frame <= 100 ? frame + 1 : frame;
 
-				if (frame <= 100) {
-					const p = initialCameraPosition;
-					const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
+			if (frame <= 100) {
+				const p = initialCameraPosition;
+				const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
 
-					camera.position.y = 10;
-					camera.position.x =
-						p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed);
-					camera.position.z =
-						p.z * Math.cos(rotSpeed) - p.x * Math.sin(rotSpeed);
-					camera.lookAt(target);
-				} else {
-					controls.update();
-				}
+				camera.position.y = 10;
+				camera.position.x = p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed);
+				camera.position.z = p.z * Math.cos(rotSpeed) - p.x * Math.sin(rotSpeed);
+				camera.lookAt(target);
+			} else {
+				controls.update();
+			}
 
-				renderer.render(scene, camera);
-			};
+			renderer.render(scene, camera);
+		};
 
-			return () => {
-				cancelAnimationFrame(req ?? 0);
-				renderer.domElement.remove();
-				renderer.dispose();
-			};
-		}
+		return () => {
+			cancelAnimationFrame(req ?? 0);
+			renderer.domElement.remove();
+			renderer.dispose();
+		};
 	}, []);
 
 	useEffect(() => {

@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { FunctionComponent } from "../../common/types";
 import DogAnimation from "../dogAnimation/DogAnimation";
