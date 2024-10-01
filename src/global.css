@@ -11,6 +11,7 @@ body {
 	--text-color: #000000;
 	--text-primary: #ffa500;
 	--text-green: #7ec727;
+	--background-card: #e3f2fd;
 }
 
 .dark {
@@ -19,14 +20,16 @@ body {
 	--text-color: #e3e3e3;
 	--text-primary: #ffa500;
 	--text-green: #7ec727;
+	--background-card: #333336;
 }
 
 @media (prefers-color-schema: dark) {
 	:root {
 		--background: #202023;
 		--background-light: #202023;
-		--text-color: #000000;
+		--text-color: #e3e3e3;
 		--text-primary: #ffa500;
 		--text-green: #7ec727;
+		--background-card: #333336;
 	}
 }

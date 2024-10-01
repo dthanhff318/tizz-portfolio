@@ -9,6 +9,7 @@ export default {
 				"text-color": "var(--text-color)",
 				"text-primary": "var(--text-primary)",
 				"text-green": "var(--text-green)",
+				"background-card": "var(--background-card)",
 			},
 		},
 	},
