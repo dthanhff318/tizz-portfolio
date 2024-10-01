@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { transition } from "three/webgpu";
 
 type TProps = {
 	text: string;
