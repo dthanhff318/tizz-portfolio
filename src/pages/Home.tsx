@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import CodeIcon from "../components/ui/icons/CodeIcon";
 import { getPublicFile } from "../helpers/functions";
+import { motion } from "framer-motion";
+import TextWriting from "../components/animation/TextWriting";
 
 const Home = () => {
 	const avatarFile = getPublicFile("avatar.jpg");
@@ -20,35 +22,55 @@ const Home = () => {
 				ref={titleRef}
 				className="absolute text-center left-1/2 -translate-x-1/2 text-text-color space-y-3 "
 			>
-				<p className="sm:text-md xl:text-xl">
-					I'm a web developer in Viet Nam 😎 !
-				</p>
+				<TextWriting
+					text="I'm a web developer in Viet Nam 😎 !"
+					className="sm:text-md xl:text-xl"
+				/>
 			</div>
-			<div className="flex gap-8 text-text-color">
+			<div className="flex flex-col sm:flex-row items-center gap-8 text-text-color">
 				<div className="flex flex-col gap-4">
-					<span className="text-5xl">Dinh Duy Thanh</span>
-					<div className="text-xl flex gap-2 items-center">
+					<span className="text-3xl md:text-4xl xl:text-5xl">
+						Dinh Duy Thanh
+					</span>
+					<div className="text-base md:text-xl flex gap-2 items-center">
 						Working as
 						<div className="flex items-center gap-2">
 							<CodeIcon />
-							<span className="text-text-primary"> Frontend </span>
+							<motion.span
+								drag
+								dragConstraints={{
+									top: -50,
+									left: -50,
+									right: 50,
+									bottom: 50,
+								}}
+								dragSnapToOrigin
+								className="text-text-primary"
+							>
+								Frontend{" "}
+							</motion.span>
 							<CodeIcon />
 						</div>
 					</div>
-					<span className="text-xl">
+					<span className="text-base md:text-xl">
 						and res.status(318).send({" "}
 						{<span className="text-text-green">Backend</span>} ) developer
 					</span>
 				</div>
 				<img
-					className="mask mask-squircle w-[140px] h-[140px]  object-cover"
+					className="mask mask-squircle size-[65%] sm:size-[140px] object-cover"
 					src={avatarFile}
-					alt="me"
+					alt="Tizz is me"
 				/>
 			</div>
 
 			{/* Introduce */}
-			<div className="mockup-code w-[60%]">
+			<motion.div
+				initial={{ opacity: 0, translateX: "-50%" }}
+				whileInView={{ opacity: 1, translateX: "0" }}
+				viewport={{ once: false }}
+				className="mockup-code w-[100%] sm:w-[80%] xl:w-[60%]"
+			>
 				<div className="px-4 text-left">
 					<pre data-prefix="#" className="text-success uppercase">
 						<code>✨✨✨ Sth about me:</code>
@@ -68,10 +90,15 @@ const Home = () => {
 						</code>
 					</pre>
 				</div>
-			</div>
+			</motion.div>
 
 			{/* Techstack */}
-			<div className="mockup-code w-[60%]">
+			<motion.div
+				initial={{ opacity: 0, translateX: "-50%" }}
+				whileInView={{ opacity: 1, translateX: "0" }}
+				viewport={{ once: false }}
+				className="mockup-code w-[100%] sm:w-[80%] xl:w-[60%]"
+			>
 				<div className="px-4 text-left">
 					<pre data-prefix="#" className="text-success uppercase">
 						<code>✨✨✨ Tech stack:</code>
@@ -86,7 +113,7 @@ const Home = () => {
 						<code>Database: MongoDB, PostgreSQL</code>
 					</pre>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	);
 };

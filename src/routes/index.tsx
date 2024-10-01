@@ -5,6 +5,7 @@ import Projects from "../pages/Projects";
 import Welcome from "../pages/Welcome";
 import Home from "./../pages/Home";
 import EPath from "./path";
+import AnimateRouting from "./AnimateRouting";
 
 const router = createBrowserRouter([
 	{
@@ -17,11 +18,19 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: EPath.Home,
-				element: <Home />,
+				element: (
+					<AnimateRouting key={EPath.Home}>
+						<Home />
+					</AnimateRouting>
+				),
 			},
 			{
 				path: EPath.Projects,
-				element: <Projects />,
+				element: (
+					<AnimateRouting key={EPath.Projects}>
+						<Projects />
+					</AnimateRouting>
+				),
 			},
 			{
 				path: EPath.Welcome,

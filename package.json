@@ -23,10 +23,7 @@
 		"lint:fix": "eslint --max-warnings 0 --fix",
 		"dev": "vite",
 		"build": "tsc && vite build",
-		"preview": "vite preview",
-		"commitlint": "commitlint --edit",
-		"commitizen": "exec < /dev/tty && git cz --hook || true",
-		"prepare": "husky"
+		"preview": "vite preview"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^3.9.0",
@@ -35,6 +32,7 @@
 		"axios": "^1.7.5",
 		"daisyui": "^4.12.10",
 		"dayjs": "^1.11.12",
+		"framer-motion": "^11.9.0",
 		"i18next": "^23.12.2",
 		"i18next-browser-languagedetector": "^8.0.0",
 		"i18next-http-backend": "^2.5.2",
@@ -83,7 +81,6 @@
 		"eslint-plugin-storybook": "^0.8.0",
 		"eslint-plugin-unicorn": "^55.0.0",
 		"globals": "^15.9.0",
-		"husky": "^9.1.4",
 		"jsdom": "^24.1.1",
 		"postcss": "^8.4.41",
 		"prettier": "^3.3.3",
