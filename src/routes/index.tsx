@@ -6,6 +6,7 @@ import Welcome from "../pages/Welcome";
 import Home from "./../pages/Home";
 import EPath from "./path";
 import AnimateRouting from "./AnimateRouting";
+import Career from "../pages/Career";
 
 const router = createBrowserRouter([
 	{
@@ -33,8 +34,12 @@ const router = createBrowserRouter([
 				),
 			},
 			{
-				path: EPath.Welcome,
-				element: <Welcome />,
+				path: EPath.Career,
+				element: (
+					<AnimateRouting key={EPath.Career}>
+						<Career />
+					</AnimateRouting>
+				),
 			},
 			{
 				path: EPath.Contact,

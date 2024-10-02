@@ -4,6 +4,7 @@ import { ETheme } from "../../helpers/enum";
 import EPath from "../../routes/path";
 import appConfigStore from "../../store/appConfigStore";
 import {
+	TargetIcon,
 	DarkIcon,
 	FolderIcon,
 	GithubIcon,
@@ -38,6 +39,12 @@ const useNavbarServices = () => {
 			title: "Project",
 			icon: FolderIcon,
 			onClick: () => navigate(EPath.Projects),
+		},
+		{
+			key: "career",
+			title: "Career",
+			icon: TargetIcon,
+			onClick: () => navigate(EPath.Career),
 		},
 		{
 			key: "github",

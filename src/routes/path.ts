@@ -3,6 +3,7 @@ enum EPath {
 	Welcome = "/welcome",
 	Projects = "/projects",
 	Contact = "/contact",
+	Career = "/career",
 }
 
 export default EPath;
