@@ -3,6 +3,7 @@ import CodeIcon from "../components/ui/icons/CodeIcon";
 import { getPublicFile } from "../helpers/functions";
 import { motion } from "framer-motion";
 import TextWriting from "../components/animation/TextWriting";
+import techStacks from "../config/techStack.config";
 
 const Home = () => {
 	const avatarFile = getPublicFile("avatar.jpg");
@@ -104,7 +105,7 @@ const Home = () => {
 						<code>✨✨✨ Tech stack:</code>
 					</pre>
 					<pre data-prefix=">" className="text-warning">
-						<code>FE: ReactJS , NextJS</code>
+						<code>FE: ReactJS, NextJS</code>
 					</pre>
 					<pre data-prefix=">" className="text-rose-500">
 						<code>BE: ExpressJS, NestJS</code>
@@ -114,6 +115,14 @@ const Home = () => {
 					</pre>
 				</div>
 			</motion.div>
+
+			<div className="carousel carousel-center bg-neutral rounded-box p-4 w-[90%] md:w-[60%] space-x-10">
+				{techStacks.map((e) => (
+					<div className="carousel-item size-[70px] md:size-[80px]">
+						{e.svg}
+					</div>
+				))}
+			</div>
 		</div>
 	);
 };

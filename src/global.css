@@ -11,16 +11,18 @@ body {
 	--text-color: #000000;
 	--text-primary: #ffa500;
 	--text-green: #7ec727;
-	--background-card: #e3f2fd;
+	--background-card: #ccd5ae;
+	--link: #0077b6;
 }
 
 .dark {
 	--background: #202023;
 	--background-light: #202023;
-	--text-color: #e3e3e3;
+	--text-color: #e0e1dd;
 	--text-primary: #ffa500;
 	--text-green: #7ec727;
 	--background-card: #333336;
+	--link: #90e0ef;
 }
 
 @media (prefers-color-schema: dark) {
@@ -31,5 +33,6 @@ body {
 		--text-primary: #ffa500;
 		--text-green: #7ec727;
 		--background-card: #333336;
+		--link: #90e0ef;
 	}
 }

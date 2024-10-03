@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import Contact from "../pages/Contact";
 import Projects from "../pages/Projects";
-import Welcome from "../pages/Welcome";
 import Home from "./../pages/Home";
 import EPath from "./path";
 import AnimateRouting from "./AnimateRouting";

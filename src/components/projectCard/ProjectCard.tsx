@@ -20,6 +20,13 @@ const ProjectCard = ({ project }: TProps) => {
 			<p className="text-text-color line-clamp-4 text-sm font-light tracking-wide">
 				{project.desc}
 			</p>
+			<a
+				className="truncate flex items-center text-xs text-link"
+				target="_blank"
+				href={project.url}
+			>
+				Visit: <p className="ml-1 hover:underline ">{project.url}</p>
+			</a>
 		</div>
 	);
 };
