@@ -32,11 +32,13 @@ const useNavbarServices = () => {
 			key: "home",
 			title: "Home",
 			icon: HomeIcon,
+			path: EPath.Home,
 			onClick: () => navigate(EPath.Home),
 		},
 		{
 			key: "project",
 			title: "Project",
+			path: EPath.Projects,
 			icon: FolderIcon,
 			onClick: () => navigate(EPath.Projects),
 		},
@@ -44,6 +46,7 @@ const useNavbarServices = () => {
 			key: "career",
 			title: "Career",
 			icon: TargetIcon,
+			path: EPath.Career,
 			onClick: () => navigate(EPath.Career),
 		},
 		{
@@ -56,6 +59,7 @@ const useNavbarServices = () => {
 			key: "contact",
 			title: "Contact",
 			icon: GmailIcon,
+			path: EPath.Contact,
 			onClick: () => navigate(EPath.Contact),
 		},
 		{

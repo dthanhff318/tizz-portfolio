@@ -42,7 +42,11 @@ const router = createBrowserRouter([
 			},
 			{
 				path: EPath.Contact,
-				element: <Contact />,
+				element: (
+					<AnimateRouting key={EPath.Contact}>
+						<Contact />
+					</AnimateRouting>
+				),
 			},
 		],
 	},

@@ -6,9 +6,13 @@ type TProps = {
 };
 const CareerLine = ({ career }: TProps) => {
 	return (
-		<motion.div className="w-full flex justify-between">
+		<motion.div className="w-full grid grid-cols-[1fr_auto_1fr] gap-5 text-text-color">
 			<p>{career.name}</p>
-			<p>{`${career.startTime} - ${career.endTime}`}</p>
+			<span className="hidden md:inline-block">
+				- - - - - - - - - - - - - - - - - - - - - - - - - - -
+			</span>
+			<span className="md:hidden">- - - - -</span>
+			<p className="text-right">{`${career.startTime} - ${career.endTime}`}</p>
 		</motion.div>
 	);
 };

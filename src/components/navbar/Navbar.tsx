@@ -1,6 +1,8 @@
+import { useLocation } from "react-router-dom";
 import useNavbarServices from "./navbar.service";
 
 const Navbar = () => {
+	const location = useLocation();
 	const { navList, handleMouseEnter, handleMouseOut, handleMouseOutNav } =
 		useNavbarServices();
 	return (
@@ -12,7 +14,7 @@ const Navbar = () => {
 				<div className="tooltip" data-tip={e.title}>
 					<div
 						key={i}
-						className="nav-item flex items-center justify-center bg-slate-300 rounded-full p-2 transition-all duration-500 w-[45px] h-[45px] cursor-pointer"
+						className={`${location.pathname === e.path && "border-gray-400 border-[1px]"} bg-slate-300 nav-item flex items-center justify-center rounded-full p-2 transition-all duration-500 w-[45px] h-[45px] cursor-pointer`}
 						onMouseEnter={handleMouseEnter}
 						onMouseLeave={handleMouseOut}
 						data-order={i}
