@@ -60,7 +60,7 @@ const Layout = (): FunctionComponent => {
 				)}
 				<ClockIcon />
 			</div>
-			<div className="relative w-full h-fit -mt-32 flex items-center z-10 mb-20">
+			<div className="relative w-full h-fit -mt-32 flex items-center z-10 mb-28">
 				<Outlet />
 			</div>
 		</div>

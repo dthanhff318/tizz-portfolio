@@ -21,7 +21,7 @@ const Home = () => {
 		<div className="relative flex justify-center bg-background w-full h-full text-center flex-col items-center gap-12">
 			<div
 				ref={titleRef}
-				className="absolute text-center left-1/2 -translate-x-1/2 text-text-color space-y-3 "
+				className="absolute text-center left-1/2 -translate-x-1/2 text-text-color space-y-3 whitespace-nowrap"
 			>
 				<TextWriting
 					text="I'm a web developer in Viet Nam 😎 !"
