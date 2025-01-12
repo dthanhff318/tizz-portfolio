@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { FunctionComponent } from "../../common/types";
-import DogAnimation from "../dogAnimation/DogAnimation";
 import Navbar from "../navbar/Navbar";
 import ClockIcon from "../ui/icons/ClockIcon";
 
+const DogAnimationLazy = lazy(() => import("../dogAnimation/DogAnimation"));
 const Layout = (): FunctionComponent => {
 	const [time, setTime] = useState<Date | undefined>(undefined);
 	const [location, setLocation] = useState<string>("");
@@ -38,7 +38,7 @@ const Layout = (): FunctionComponent => {
 	return (
 		<div className="relative w-screen h-screen bg-background overflow-y-auto overflow-x-hidden p-4">
 			<Navbar />
-			<DogAnimation />
+			<DogAnimationLazy />
 			<div className="absolute font-semibold top-4 left-4 text-text-color flex gap-4 items-center">
 				{location ? location : <div className="skeleton h-4 w-20"></div>}
 				{time ? (
