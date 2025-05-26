@@ -3,20 +3,14 @@ import useNavbarServices from "./navbar.service";
 
 const Navbar = () => {
 	const location = useLocation();
-	const { navList, handleMouseEnter, handleMouseOut, handleMouseOutNav } =
-		useNavbarServices();
+	const { navList } = useNavbarServices();
 	return (
-		<nav
-			className="z-50 fixed bottom-7 left-2/4 -translate-x-1/2 items-end flex gap-2 bg-slate-200 p-2 w-fit rounded-3xl h-fit max-h-[60px] transition-all"
-			onMouseLeave={handleMouseOutNav}
-		>
+		<nav className="z-1 w-[80px] h-full bottom-7 left-2 items-end flex flex-col gap-2 bg-primary-bold p-2 rounded-3xl  transition-all">
 			{navList.map((e, i) => (
-				<div className="tooltip" data-tip={e.title}>
+				<div>
 					<div
 						key={i}
-						className={`${location.pathname === e.path && "border-gray-400 border-[1px]"} bg-slate-300 nav-item flex items-center justify-center rounded-full p-2 transition-all duration-500 w-[45px] h-[45px] cursor-pointer`}
-						onMouseEnter={handleMouseEnter}
-						onMouseLeave={handleMouseOut}
+						className={`${location.pathname === e.path && "fill-primary-light"} flex items-center justify-center rounded-full p-2 transition-all duration-500 w-[60px] h-[60px] cursor-pointer`}
 						data-order={i}
 						onClick={e.onClick}
 					>

@@ -4,13 +4,11 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				background: "var(--background)",
-				"background-light": "var(--background-light)",
-				"text-color": "var(--text-color)",
-				"text-primary": "var(--text-primary)",
-				"text-green": "var(--text-green)",
-				"background-card": "var(--background-card)",
-				link: "var(--link)",
+				primary: "#61272d",
+				"primary-bold": "#361617",
+				"primary-light": "#c23e3b",
+				"text-primary": "#fffafb",
+				"text-secondary": "#ae5d66",
 			},
 		},
 	},

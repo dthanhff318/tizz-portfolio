@@ -1,127 +1,36 @@
 import { useEffect, useRef } from "react";
-import CodeIcon from "../components/ui/icons/CodeIcon";
-import { getPublicFile } from "../helpers/functions";
-import { motion } from "framer-motion";
-import TextWriting from "../components/animation/TextWriting";
-import techStacks from "../config/techStack.config";
+import ProjectCard from "../components/projectCard/ProjectCard";
+import projects from "../config/project.config";
+import { TProject } from "../types/project";
+import Statistic from "../components/statistic/Statistic";
 
 const Home = () => {
-	const avatarFile = getPublicFile("avatar.jpg");
-	const titleRef = useRef<HTMLDivElement>(null);
-
-	useEffect(() => {
-		const dogContainer = document.querySelector("#dog-three-container");
-		if (dogContainer && titleRef.current) {
-			const rectDogContainer = dogContainer.getBoundingClientRect().top;
-			titleRef.current.style.top = `${rectDogContainer}px`;
-		}
-	}, []);
-
 	return (
-		<div className="relative flex justify-center bg-background w-full h-full text-center flex-col items-center gap-12">
-			<div
-				ref={titleRef}
-				className="absolute text-center left-1/2 -translate-x-1/2 text-text-color space-y-3 whitespace-nowrap"
-			>
-				<TextWriting
-					text="I'm a web developer in Viet Nam 😎 !"
-					className="sm:text-md xl:text-xl"
-				/>
+		<div className="relative flex flex-col justify-center w-full h-full items-center gap-4 flex-1 px-6 ">
+			<div className="flex justify-between w-full">
+				<div className="flex gap-2">
+					<p className="text-text-secondary text-2xl">Hi,</p>
+					<p className="text-text-primary text-2xl">I'm t1zz</p>
+				</div>
+				<div>
+					<p>Icon placeholder</p>
+				</div>
 			</div>
-			<div className="flex flex-col sm:flex-row items-center gap-8 text-text-color">
-				<div className="flex flex-col gap-4">
-					<span className="text-3xl md:text-4xl xl:text-5xl">
-						Dinh Duy Thanh
-					</span>
-					<div className="text-base md:text-xl flex gap-2 items-center">
-						Working as
-						<div className="flex items-center gap-2">
-							<CodeIcon />
-							<motion.span
-								drag
-								dragConstraints={{
-									top: -50,
-									left: -50,
-									right: 50,
-									bottom: 50,
-								}}
-								dragSnapToOrigin
-								className="text-text-primary"
-							>
-								Frontend{" "}
-							</motion.span>
-							<CodeIcon />
-						</div>
-					</div>
-					<span className="text-base md:text-xl">
-						and res.status(318).send({" "}
-						{<span className="text-text-green">Backend</span>} ) developer
-					</span>
+			<div className="flex gap-4 w-full">
+				<div className="flex-1">
+					<ProjectCard project={projects[0] as TProject} />
 				</div>
-				<img
-					className="mask mask-squircle size-[65%] sm:size-[140px] object-cover"
-					src={avatarFile}
-					alt="Tizz is me"
-				/>
+				<div className="w-[40%] space-y-4">
+					<ProjectCard.Sub project={projects[1] as TProject} />
+					<ProjectCard.Sub project={projects[1] as TProject} />
+					<ProjectCard.Sub project={projects[1] as TProject} />
+				</div>
 			</div>
-
-			{/* Introduce */}
-			<motion.div
-				initial={{ opacity: 0, translateX: "-50%" }}
-				whileInView={{ opacity: 1, translateX: "0" }}
-				viewport={{ once: false }}
-				className="mockup-code w-[100%] sm:w-[80%] xl:w-[60%]"
-			>
-				<div className="px-4 text-left">
-					<pre data-prefix="#" className="text-success uppercase">
-						<code>✨✨✨ Sth about me:</code>
-					</pre>
-					<pre data-prefix="*" className="text-warning">
-						<code>Name: Đinh Duy Thành</code>
-					</pre>
-					<pre data-prefix=">" className="text-success">
-						<code>Birthday: 31/08/2000</code>
-					</pre>
-					<pre data-prefix="$" className="text-success">
-						<code>
-							Gmail:{" "}
-							<a className="hover:underline" href="dthanhff318@gmail.com">
-								dthanhff318@gmail.com
-							</a>
-						</code>
-					</pre>
+			<div className="flex flex-1 w-full bg-red">
+				<div className="flex-1 h-full"></div>
+				<div className="w-[40%] h-full">
+					<Statistic />
 				</div>
-			</motion.div>
-
-			{/* Techstack */}
-			<motion.div
-				initial={{ opacity: 0, translateX: "-50%" }}
-				whileInView={{ opacity: 1, translateX: "0" }}
-				viewport={{ once: false }}
-				className="mockup-code w-[100%] sm:w-[80%] xl:w-[60%]"
-			>
-				<div className="px-4 text-left">
-					<pre data-prefix="#" className="text-success uppercase">
-						<code>✨✨✨ Tech stack:</code>
-					</pre>
-					<pre data-prefix=">" className="text-warning">
-						<code>FE: ReactJS, NextJS</code>
-					</pre>
-					<pre data-prefix=">" className="text-rose-500">
-						<code>BE: ExpressJS, NestJS</code>
-					</pre>
-					<pre data-prefix=">" className="text-cyan-400">
-						<code>Database: MongoDB, PostgreSQL</code>
-					</pre>
-				</div>
-			</motion.div>
-
-			<div className="carousel carousel-center bg-neutral rounded-box p-4 w-[90%] md:w-[60%] space-x-10">
-				{techStacks.map((e) => (
-					<div className="carousel-item size-[70px] md:size-[80px]">
-						{e.svg}
-					</div>
-				))}
 			</div>
 		</div>
 	);

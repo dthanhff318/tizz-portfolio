@@ -73,68 +73,7 @@ const useNavbarServices = () => {
 		},
 	];
 
-	const handleResizeElement = (index: number) => {
-		const loopCountBackward = index;
-		const loopCountForward = navList.length - 1 - index;
-		const minValue = 45;
-		// Backward
-		for (let i = 0; i < loopCountBackward; i++) {
-			const siblingElement = document.querySelector(
-				`[data-order="${index - i - 1}"]`
-			) as HTMLDivElement;
-			if (siblingElement) {
-				const calculateWidth = DEFAULT_WiDTH - 5 * (i + 1);
-				const resultWidth =
-					calculateWidth > minValue ? calculateWidth : minValue;
-				siblingElement.style.width = `${resultWidth}px`;
-				siblingElement.style.height = `${resultWidth}px`;
-			}
-		}
-		// Forward
-		for (let i = 0; i < loopCountForward; i++) {
-			const siblingElement = document.querySelector(
-				`[data-order="${index + i + 1}"]`
-			) as HTMLDivElement;
-			if (siblingElement) {
-				const calculateWidth = DEFAULT_WiDTH - 5 * (i + 1);
-				const resultWidth =
-					calculateWidth > minValue ? calculateWidth : minValue;
-				siblingElement.style.width = `${resultWidth}px`;
-				siblingElement.style.height = `${resultWidth}px`;
-			}
-		}
-	};
-	const handleMouseEnter = (e: any) => {
-		if (triggerRef.current.timeOut) {
-			clearTimeout(triggerRef.current.timeOut);
-		}
-		const currentTarget = e.currentTarget;
-		const indexData = Number(currentTarget.dataset.order);
-		currentTarget.style.width = `${DEFAULT_WiDTH}px`;
-		currentTarget.style.height = `${DEFAULT_WiDTH}px`;
-		handleResizeElement(indexData);
-	};
-
-	const handleMouseOut = () => {
-		const timeOut = setTimeout(() => {
-			const navElements = document.querySelectorAll(".nav-item");
-			navElements.forEach((ele) => {
-				(ele as HTMLDivElement).style.width = `${MIN_WIDTH}px`;
-				(ele as HTMLDivElement).style.height = `${MIN_WIDTH}px`;
-			});
-		}, 100);
-		triggerRef.current.timeOut = timeOut;
-	};
-
-	const handleMouseOutNav = () => {
-		const navElements = document.querySelectorAll(".nav-item");
-		navElements.forEach((ele) => {
-			(ele as HTMLDivElement).style.width = `${MIN_WIDTH}px`;
-			(ele as HTMLDivElement).style.height = `${MIN_WIDTH}px`;
-		});
-	};
-
-	return { navList, handleMouseEnter, handleMouseOut, handleMouseOutNav };
+	return { navList };
 };
 
 export default useNavbarServices;

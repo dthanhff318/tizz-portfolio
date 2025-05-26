@@ -1,0 +1,45 @@
+@keyframes blob-1 {
+	0%,
+	100% {
+		transform: scale(1) translate(0px, 0px);
+		border-radius: 42% 58% 70% 30% / 30% 40% 60% 70%;
+	}
+	50% {
+		transform: scale(1.05) translate(10px, -5px);
+		border-radius: 60% 40% 30% 70% / 70% 30% 60% 40%;
+	}
+}
+
+@keyframes blob-2 {
+	0%,
+	100% {
+		transform: scale(1) translate(0px, 0px);
+		border-radius: 50% 50% 60% 40% / 50% 60% 40% 50%;
+	}
+	50% {
+		transform: scale(0.97) translate(-10px, 8px);
+		border-radius: 40% 60% 70% 30% / 60% 50% 50% 40%;
+	}
+}
+
+@keyframes blob-3 {
+	0%,
+	100% {
+		transform: scale(1) translate(0px, 0px);
+		border-radius: 45% 55% 65% 35% / 35% 55% 65% 45%;
+	}
+	50% {
+		transform: scale(1.03) translate(6px, -6px);
+		border-radius: 55% 45% 35% 65% / 65% 35% 45% 55%;
+	}
+}
+
+.animate-blob-1 {
+	animation: blob-1 6s infinite ease-in-out;
+}
+.animate-blob-2 {
+	animation: blob-2 8s infinite ease-in-out;
+}
+.animate-blob-3 {
+	animation: blob-3 12s infinite ease-in-out;
+}

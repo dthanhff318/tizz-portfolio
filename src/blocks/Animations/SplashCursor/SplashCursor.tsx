@@ -1,7 +1,7 @@
+/* eslint-disable */
 import { useEffect, useRef } from "react";
 
 function SplashCursor({
-	// You can customize these props if you want
 	SIM_RESOLUTION = 32,
 	DYE_RESOLUTION = 360,
 	CAPTURE_RESOLUTION = 128,
