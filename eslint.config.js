@@ -34,9 +34,6 @@ const typescriptConfig = {
 		},
 	},
 	linterOptions: {},
-	plugins: {
-		import: patchedImportPlugin,
-	},
 	rules: {},
 	settings: {
 		"import/resolver": {
@@ -46,16 +43,6 @@ const typescriptConfig = {
 			},
 		},
 	},
-};
-
-const reactConfig = {
-	name: "react",
-	extends: [eslintPluginReact.configs.flat["jsx-runtime"]],
-	plugins: {
-		"react-hooks": patchedReactHooksPlugin,
-		"react-refresh": eslintPluginReactRefresh,
-	},
-	rules: {},
 };
 
 const jsxA11yConfig = {

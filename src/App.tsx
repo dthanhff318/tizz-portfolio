@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useEffect, useState } from "react";
 import appConfigStore from "./store/appConfigStore";
 import { ETheme } from "./helpers/enum";
-import SplashCursor from "./blocks/Animations/SplashCursor/SplashCursor.tsx";
 import MainLoading from "./components/loading/MainLoading.tsx";
 const queryClient = new QueryClient();
 
@@ -29,7 +28,6 @@ const App = ({ router }: AppProps): FunctionComponent => {
 
 	return (
 		<QueryClientProvider client={queryClient}>
-			<SplashCursor />
 			{loading ? <MainLoading /> : <RouterProvider router={router} />}
 		</QueryClientProvider>
 	);
