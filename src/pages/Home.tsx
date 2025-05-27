@@ -3,10 +3,11 @@ import ProjectCard from "../components/projectCard/ProjectCard";
 import projects from "../config/project.config";
 import { TProject } from "../types/project";
 import Statistic from "../components/statistic/Statistic";
+import Career from "../components/career/Career";
 
 const Home = () => {
 	return (
-		<div className="relative flex flex-col justify-center w-full h-full items-center gap-4 flex-1 px-6 ">
+		<div className="relative flex flex-col justify-center w-full h-full items-center gap-6 flex-1 px-6 ">
 			<div className="flex justify-between w-full">
 				<div className="flex gap-2">
 					<p className="text-text-secondary text-2xl">Hi,</p>
@@ -27,7 +28,10 @@ const Home = () => {
 				</div>
 			</div>
 			<div className="flex flex-1 w-full bg-red">
-				<div className="flex-1 h-full"></div>
+				<div className="flex-1 h-full">
+					<Career />
+					<div className=""></div>
+				</div>
 				<div className="w-[40%] h-full">
 					<Statistic />
 				</div>
