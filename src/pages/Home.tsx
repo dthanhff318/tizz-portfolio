@@ -27,8 +27,8 @@ const Home = () => {
 					<ProjectCard.Sub project={projects[1] as TProject} />
 				</div>
 			</div>
-			<div className="flex flex-1 w-full bg-red">
-				<div className="flex-1 h-full">
+			<div className="flex flex-1 w-full bg-red gap-8">
+				<div className="flex-1 h-full overflow-x-auto">
 					<Career />
 					<div className=""></div>
 				</div>

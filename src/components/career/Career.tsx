@@ -33,11 +33,11 @@ Career.Card = ({ name, startTime, endTime }: TCareer) => {
 				}}
 			>
 				<img
-					className="w-full h-full rounded-3xl object-cover object-center brightness-75"
+					className="w-full h-full rounded-3xl object-cover object-center brightness-50 group-hover:brightness-75 transition-all duration-300"
 					src="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/08/valorant-neon.jpg"
 					alt=""
 				/>
-				<div className="absolute top-0 left-0 flex flex-col justify-between gap-2 p-4">
+				<div className="absolute top-0 left-0 bottom-0 flex flex-col justify-between gap-2 p-4">
 					<button className=" relative w-14 h-14 bg-[#be3f3a] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:rotate-[75deg] transition-all duration-300">
 						<svg
 							className="mb-1"
@@ -52,9 +52,11 @@ Career.Card = ({ name, startTime, endTime }: TCareer) => {
 							></path>
 						</svg>
 					</button>
-					<div className="flex flex-col gap-2">
-						<p className="text-text-primary text-2xl font-semibold">{name}</p>
-						<p className="text-text-secondary text-sm hidden group-hover:block transition-all duration-300">
+					<div className="flex flex-col justify-end-end gap-2">
+						<p className="text-text-primary text-2xl font-semibold group-hover:translate-y-0 translate-y-3 transition-all duration-300">
+							{name}
+						</p>
+						<p className="text-[#cf675b] text-sm opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 transition-all duration-300">
 							{startTime} - {endTime}
 						</p>
 					</div>
