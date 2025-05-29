@@ -6,6 +6,7 @@ const careerConfig: TCareer[] = [
 		startTime: 2024,
 		endTime: "Now",
 	},
+
 	{
 		name: "INTS Company",
 		startTime: 2022,
