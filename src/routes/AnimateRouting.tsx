@@ -14,7 +14,7 @@ const AnimateRouting = ({ key, children }: TProps) => {
 				animate={{ opacity: 1, translateY: 0 }}
 				transition={{ duration: 0.7 }}
 				exit={{ opacity: 0 }}
-				className="w-full"
+				className="w-full h-full"
 			>
 				{children}
 			</motion.div>

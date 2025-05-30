@@ -5,7 +5,7 @@ const Navbar = () => {
 	const location = useLocation();
 	const { navList } = useNavbarServices();
 	return (
-		<nav className="z-1 w-[80px] h-full bottom-7 left-2 items-end flex flex-col gap-2 bg-primary-bold p-2 rounded-3xl  transition-all">
+		<nav className="w-[80px] h-full bottom-7 left-2 items-end flex flex-col gap-2 bg-primary-bold p-2 rounded-3xl  transition-all">
 			{navList.map((e, i) => (
 				<div>
 					<div

@@ -7,6 +7,7 @@ const Career = () => {
 	const [isDragging, setIsDragging] = useState(false);
 	const [startX, setStartX] = useState(0);
 	const [scrollLeft, setScrollLeft] = useState(0);
+	const [isFirstCardHovered, setIsFirstCardHovered] = useState(false);
 
 	const handleMouseDown = (e: React.MouseEvent) => {
 		if (!scrollContainerRef.current) return;
@@ -36,13 +37,16 @@ const Career = () => {
 	const handleTouchStart = (e: React.TouchEvent) => {
 		if (!scrollContainerRef.current) return;
 		setIsDragging(true);
-		setStartX(e.touches[0].pageX - scrollContainerRef.current.offsetLeft);
+		setStartX(
+			(e.touches[0]?.pageX ?? 0) - scrollContainerRef.current.offsetLeft
+		);
 		setScrollLeft(scrollContainerRef.current.scrollLeft);
 	};
 
 	const handleTouchMove = (e: React.TouchEvent) => {
 		if (!isDragging || !scrollContainerRef.current) return;
-		const x = e.touches[0].pageX - scrollContainerRef.current.offsetLeft;
+		const x =
+			(e.touches[0]?.pageX ?? 0) - scrollContainerRef.current.offsetLeft;
 		const walk = (x - startX) * 2;
 		scrollContainerRef.current.scrollLeft = scrollLeft - walk;
 	};
@@ -87,13 +91,13 @@ const Career = () => {
 	}, [isDragging]);
 
 	return (
-		<div className="h-full w-full flex flex-col gap-4 overflow-visible">
+		<div className="h-full w-full flex flex-col gap-4 overflow-visible group/career">
 			<div className="">
 				<p className="text-text-primary text-2xl font-semibold">My career</p>
 			</div>
 			<div
 				ref={scrollContainerRef}
-				className="flex gap-6 overflow-x-auto overflow-y-visible scrollbar-hide cursor-grab select-none -my-4 -ml-4 py-4 pl-4"
+				className="flex gap-6 overflow-x-auto overflow-y-visible scrollbar-hide cursor-grab select-none -ml-4 -my-4 py-4 pl-4 transition-all duration-300 group-hover/career:ml-0"
 				style={{
 					scrollbarWidth: "none",
 					msOverflowStyle: "none",
@@ -126,7 +130,7 @@ Career.Card = ({ name, startTime, endTime }: TCareer) => {
 				}}
 			></div>
 			<div
-				className="relative z-1 w-full h-full rounded-3xl hover:transition-transform hover:duration-1000 hover:transform hover:rotate-[-6deg]"
+				className="relative z-1 w-full h-full rounded-3xl hover:transition-transform hover:duration-1000 hover:transform hover:rotate-[-4deg]"
 				style={{
 					transformOrigin: "left bottom",
 				}}

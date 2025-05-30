@@ -1,4 +1,5 @@
 import "./style.css";
+import CountUp from "react-countup";
 const Statistic = () => {
 	return (
 		<div className="h-full flex flex-col gap-4">
@@ -6,7 +7,7 @@ const Statistic = () => {
 				<p className="text-text-primary text-2xl font-semibold">My statistic</p>
 			</div>
 			<div className="bg-primary-bold rounded-3xl flex flex-col flex-1 items-center justify-center">
-				<div className="relative w-64 h-64">
+				<div className="relative w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64">
 					{/* Layer 1 */}
 					<div className="absolute inset-0 z-10">
 						<div
@@ -33,9 +34,23 @@ const Statistic = () => {
 
 					{/* Inner Content */}
 					<div className="absolute inset-0 flex items-center justify-center z-20">
-						<div className="w-48 h-48 rounded-full bg-primary-bold flex flex-col items-center justify-center text-white text-center shadow-lg">
-							<p className="text-sm">Total hours</p>
-							<p className="text-3xl font-bold">12,340h</p>
+						<div className="w-24 h-24 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full bg-primary-bold flex flex-col items-center justify-center text-white text-center shadow-lg">
+							<p className="text-xs sm:text-sm md:text-base">Experience:</p>
+							<p className="text-xl sm:text-2xl md:text-3xl font-bold">
+								<CountUp
+									start={0}
+									end={3}
+									duration={4}
+									separator=""
+									decimals={1}
+									formattingFn={(value) => {
+										return Number.isInteger(value)
+											? value.toString()
+											: value.toFixed(1);
+									}}
+								></CountUp>{" "}
+								years
+							</p>
 						</div>
 					</div>
 				</div>
