@@ -2,6 +2,7 @@ import { TProject } from "../../types/project";
 
 type TProps = {
 	project: TProject;
+	selectProject?: (project: TProject) => void;
 };
 const ProjectCard = ({ project }: TProps) => {
 	return (
@@ -25,36 +26,39 @@ const ProjectCard = ({ project }: TProps) => {
 				<h2 className="text-3xl text-text-primary font-bold mt-4 mb-2">
 					{project.name}
 				</h2>
-				<p className="text-pink-100 leading-relaxed text-text-primary">
-					{project.desc}
-				</p>
-				<div className="flex items-center gap-2 mt-4">
-					<img
-						src="/avatar1.png"
-						alt="User 1"
-						className="w-8 h-8 rounded-full border-2 border-white"
-					/>
-					<img
-						src="/avatar2.png"
-						alt="User 2"
-						className="w-8 h-8 rounded-full border-2 border-white -ml-2"
-					/>
-					<span className="ml-2 text-sm text-white">+53 Reviews</span>
+				<p className="leading-relaxed text-text-primary">{project.desc}</p>
+				<div className="flex items-center gap-1 mt-4">
+					{project.tech?.map((techIcon, index) => (
+						<div
+							key={index}
+							className="w-8 h-8 rounded-full bg-white/40 backdrop-blur-sm flex items-center justify-center p-1.5"
+						>
+							<img
+								src={techIcon}
+								alt="tech icon"
+								className="w-full h-full object-contain"
+							/>
+						</div>
+					))}
+					<span className="ml-2 text-sm text-white"></span>
 				</div>
 			</div>
 
 			<img
-				src="/assets/jett.png"
-				alt="Jett"
-				className="absolute h-[250px] right-0 bottom-0 object-contain z-20 pointer-events-none"
+				src={project.preview}
+				alt={project.name}
+				className="absolute h-[280px] right-0 bottom-[-10px] object-contain z-20 pointer-events-none"
 			/>
 		</div>
 	);
 };
 
-ProjectCard.Sub = ({ project }: TProps) => {
+ProjectCard.Sub = ({ project, selectProject }: TProps) => {
 	return (
-		<div className="flex items-center bg-primary-bold rounded-2xl p-2 w-full">
+		<div
+			className="group flex items-center bg-primary-bold rounded-2xl p-2 w-full cursor-pointer transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:scale-[1.02]"
+			onClick={() => selectProject?.(project)}
+		>
 			<img
 				src={project.thumb}
 				alt="Avatar"
@@ -68,7 +72,7 @@ ProjectCard.Sub = ({ project }: TProps) => {
 					(Standard Edition + Starter Pass)
 				</div>
 			</div>
-			<div className="ml-4">
+			<div className="ml-4 transition-transform duration-300 group-hover:translate-x-1">
 				<svg
 					className="w-6 h-6 text-text-primary"
 					fill="none"
