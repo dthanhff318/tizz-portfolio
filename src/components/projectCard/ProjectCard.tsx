@@ -10,8 +10,12 @@ const ProjectCard = ({ project }: TProps) => {
 			<div
 				className="p-6 flex-1 bg-gradient-to-b from-[#c44242] to-[#d06a5d] rounded-2xl"
 				style={{
-					clipPath:
-						"polygon(83% 0, 98% 36%, 93% 79%, 83% 100%, 0 100%, 0% 60%, 0 0)",
+					WebkitMaskImage: `linear-gradient(to right, black 0%, black 70%, transparent 100%)`,
+					maskImage: `linear-gradient(to right, black 0%, black 70%, transparent 100%)`,
+					WebkitMaskSize: "100% 100%",
+					maskSize: "100% 100%",
+					WebkitMaskRepeat: "no-repeat",
+					maskRepeat: "no-repeat",
 				}}
 			>
 				<div className="flex gap-2">
@@ -26,7 +30,9 @@ const ProjectCard = ({ project }: TProps) => {
 				<h2 className="text-3xl text-text-primary font-bold mt-4 mb-2">
 					{project.name}
 				</h2>
-				<p className="leading-relaxed text-text-primary">{project.desc}</p>
+				<p className="w-[70%] leading-relaxed text-text-primary">
+					{project.desc}
+				</p>
 				<div className="flex items-center gap-1 mt-4">
 					{project.tech?.map((techIcon, index) => (
 						<div

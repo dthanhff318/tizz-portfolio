@@ -13,9 +13,6 @@ import {
 	LightIcon,
 } from "./navbar.icon";
 
-const DEFAULT_WiDTH = 65;
-const MIN_WIDTH = 45;
-
 const useNavbarServices = () => {
 	const { theme, setTheme } = appConfigStore();
 	const navigate = useNavigate();
@@ -35,33 +32,33 @@ const useNavbarServices = () => {
 			path: EPath.Home,
 			onClick: () => navigate(EPath.Home),
 		},
-		{
-			key: "project",
-			title: "Project",
-			path: EPath.Projects,
-			icon: FolderIcon,
-			onClick: () => navigate(EPath.Projects),
-		},
-		{
-			key: "career",
-			title: "Career",
-			icon: TargetIcon,
-			path: EPath.Career,
-			onClick: () => navigate(EPath.Career),
-		},
-		{
-			key: "github",
-			title: "Github",
-			icon: GithubIcon,
-			onClick: () => window.open("https://github.com/dthanhff318"),
-		},
-		{
-			key: "contact",
-			title: "Contact",
-			icon: GmailIcon,
-			path: EPath.Contact,
-			onClick: () => navigate(EPath.Contact),
-		},
+		// {
+		// 	key: "project",
+		// 	title: "Project",
+		// 	path: EPath.Projects,
+		// 	icon: FolderIcon,
+		// 	onClick: () => navigate(EPath.Projects),
+		// },
+		// {
+		// 	key: "career",
+		// 	title: "Career",
+		// 	icon: TargetIcon,
+		// 	path: EPath.Career,
+		// 	onClick: () => navigate(EPath.Career),
+		// },
+		// {
+		// 	key: "github",
+		// 	title: "Github",
+		// 	icon: GithubIcon,
+		// 	onClick: () => window.open("https://github.com/dthanhff318"),
+		// },
+		// {
+		// 	key: "contact",
+		// 	title: "Contact",
+		// 	icon: GmailIcon,
+		// 	path: EPath.Contact,
+		// 	onClick: () => navigate(EPath.Contact),
+		// },
 		{
 			key: "light",
 			title: "Light mode",

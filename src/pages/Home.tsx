@@ -8,7 +8,7 @@ import projectStore from "../store/projectStore";
 
 const Home = () => {
 	const [isCareerAtEnd, setIsCareerAtEnd] = useState(false);
-	const { project, setProject } = projectStore();
+	const { project, remainingProjects, setProject } = projectStore();
 	return (
 		<div className="relative flex flex-col justify-center w-full h-full items-center gap-6 flex-1 px-6">
 			<div className="flex justify-between w-full">
@@ -25,7 +25,7 @@ const Home = () => {
 					<ProjectCard project={project} />
 				</div>
 				<div className="space-y-4">
-					{projects.map((project, index) => (
+					{remainingProjects.map((project, index) => (
 						<ProjectCard.Sub
 							key={index}
 							selectProject={setProject}
