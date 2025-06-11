@@ -5,6 +5,7 @@ import { TProject } from "../types/project";
 import Statistic from "../components/statistic/Statistic";
 import Career from "../components/career/Career";
 import projectStore from "../store/projectStore";
+import MusicPlayer from "../components/musicPlayer/musicPlayer";
 
 const Home = () => {
 	const [isCareerAtEnd, setIsCareerAtEnd] = useState(false);
@@ -35,15 +36,18 @@ const Home = () => {
 				</div>
 			</div>
 			<div className="grid grid-cols-[1fr_40%] flex-1 w-full gap-8 h-full relative">
-				<div className="h-full overflow-x-auto relative career-container">
+				<div className="h-full overflow-x-auto flex flex-col gap-4 relative career-container">
 					<Career onScrollChange={setIsCareerAtEnd} />
 					<div
-						className={`absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-primary to-transparent pointer-events-none transition-opacity duration-300 ${
+						className={`absolute top-0 bottom-0 right-0 w-20 h-full bg-gradient-to-l from-primary to-transparent pointer-events-none transition-opacity duration-300 ${
 							isCareerAtEnd ? "opacity-0" : "opacity-100"
 						}`}
 					></div>
+					<div className="h-full">
+						<MusicPlayer />
+					</div>
 				</div>
-				<div className="h-full">
+				<div className="flex-1">
 					<Statistic />
 				</div>
 			</div>

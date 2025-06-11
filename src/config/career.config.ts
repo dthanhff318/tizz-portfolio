@@ -17,6 +17,12 @@ const careerConfig: TCareer[] = [
 		thumb: intsThumb,
 	},
 	{
+		name: "INTS Company",
+		startTime: 2022,
+		endTime: 2024,
+		thumb: intsThumb,
+	},
+	{
 		name: "HUST",
 		startTime: 2018,
 		endTime: 2023,

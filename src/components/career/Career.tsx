@@ -130,7 +130,7 @@ const Career = ({ onScrollChange }: CareerProps = {}) => {
 	}, [onScrollChange]);
 
 	return (
-		<div className="h-full w-full flex flex-col gap-4 overflow-visible group/career">
+		<div className="h-fit w-full flex flex-col gap-4 overflow-visible group/career translate-y-4  pb-4">
 			<div className="">
 				<p className="text-text-primary text-2xl font-semibold">My career</p>
 			</div>
