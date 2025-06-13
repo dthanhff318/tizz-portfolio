@@ -18,7 +18,7 @@ const Home = () => {
 					<p className="text-text-primary text-2xl">I'm t1zz</p>
 				</div>
 				<div>
-					<p>Icon placeholder</p>
+					<p></p>
 				</div>
 			</div>
 			<div className="grid grid-cols-[1fr_40%] gap-4 w-full">

@@ -17,7 +17,7 @@ const PlayButton = ({
 	return (
 		<button
 			onClick={onClick}
-			className="relative w-16 h-16 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors duration-200"
+			className="relative w-16 h-16 hover:shadow-lg hover:shadow-primary-light transition-all  rounded-full flex items-center justify-center duration-200"
 		>
 			{/* Progress ring */}
 			<svg
@@ -29,22 +29,21 @@ const PlayButton = ({
 					cx="32"
 					cy="32"
 					r="30"
-					stroke="rgba(239, 68, 68, 0.2)"
 					strokeWidth="2"
 					fill="none"
+					className="stroke-primary"
 				/>
 				{/* Progress ring */}
 				<circle
 					cx="32"
 					cy="32"
 					r="30"
-					stroke="#ef4444"
 					strokeWidth="2"
 					fill="none"
 					strokeDasharray={circumference}
 					strokeDashoffset={strokeDashoffset}
 					strokeLinecap="round"
-					className="transition-all duration-300"
+					className="transition-all duration-300 stroke-primary-light"
 				/>
 			</svg>
 
@@ -71,7 +70,7 @@ const PlayButton = ({
 				>
 					<path
 						d="M11 9 C11 8 12 7.5 12.7 8 L23 15 C23.7 15.5 23.7 16.5 23 17 L12.7 24 C12 24.5 11 24 11 23 Z"
-						fill="white"
+						className="fill-text-primary"
 					/>
 				</svg>
 			)}

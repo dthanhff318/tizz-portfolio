@@ -17,7 +17,7 @@ const MusicPlayer = () => {
 	const audioRef = useRef<HTMLAudioElement>(null);
 	return (
 		<div
-			className="h-full w-full rounded-3xl bg-gradient-to-b from-[#d06a5d] to-[#c44242] flex items-center justify-start"
+			className="h-full w-full rounded-3xl bg-primary-bold flex items-center justify-start"
 			style={{
 				WebkitMaskImage: `linear-gradient(to right, black 0%, black 70%, transparent 100%)`,
 				maskImage: `linear-gradient(to right, black 0%, black 70%, transparent 100%)`,
@@ -33,10 +33,12 @@ const MusicPlayer = () => {
 				isPlaying={isPlaying}
 				rotationSpeed={10}
 			/>
-			<div className="flex gap-4">
+			<div className="flex gap-16 ml-4">
 				<div className="flex flex-col gap-3">
-					<span>See you again</span>
-					<span>With KaliFa</span>
+					<span className="text-text-primary text-2xl font-bold">
+						See you again
+					</span>
+					<span className="text-text-secondary">With KaliFa</span>
 				</div>
 				<div>
 					<PlayButton
