@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 interface PlayButtonProps {
 	progress?: number; // Progress percentage (0-100)
 	isPlaying?: boolean;

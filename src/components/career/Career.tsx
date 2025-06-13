@@ -11,7 +11,6 @@ const Career = ({ onScrollChange }: CareerProps = {}) => {
 	const [isDragging, setIsDragging] = useState(false);
 	const [startX, setStartX] = useState(0);
 	const [scrollLeft, setScrollLeft] = useState(0);
-	const [isFirstCardHovered, setIsFirstCardHovered] = useState(false);
 
 	const handleMouseDown = (e: React.MouseEvent) => {
 		if (!scrollContainerRef.current) return;
@@ -110,9 +109,8 @@ const Career = ({ onScrollChange }: CareerProps = {}) => {
 		const container = scrollContainerRef.current;
 		if (container) {
 			container.addEventListener("mouseleave", handleMouseLeave);
-			return () =>
-				container.removeEventListener("mouseleave", handleMouseLeave);
 		}
+		return () => container?.removeEventListener("mouseleave", handleMouseLeave);
 	}, [isDragging]);
 
 	useEffect(() => {
@@ -125,8 +123,8 @@ const Career = ({ onScrollChange }: CareerProps = {}) => {
 			container.addEventListener("scroll", handleScroll);
 			// Check initial state
 			checkScrollEnd();
-			return () => container.removeEventListener("scroll", handleScroll);
 		}
+		return () => container?.removeEventListener("scroll", handleScroll);
 	}, [onScrollChange]);
 
 	return (

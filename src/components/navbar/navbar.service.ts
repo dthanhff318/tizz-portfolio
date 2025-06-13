@@ -1,24 +1,12 @@
-import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { ETheme } from "../../helpers/enum";
 import EPath from "../../routes/path";
 import appConfigStore from "../../store/appConfigStore";
-import {
-	TargetIcon,
-	DarkIcon,
-	FolderIcon,
-	GithubIcon,
-	GmailIcon,
-	HomeIcon,
-	LightIcon,
-} from "./navbar.icon";
+import { DarkIcon, HomeIcon, LightIcon } from "./navbar.icon";
 
 const useNavbarServices = () => {
 	const { theme, setTheme } = appConfigStore();
 	const navigate = useNavigate();
-	const triggerRef = useRef<{ timeOut: any }>({
-		timeOut: null,
-	});
 
 	const changeTheme = (theme: ETheme) => () => {
 		setTheme(theme);

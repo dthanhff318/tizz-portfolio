@@ -1,17 +1,15 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import type { FunctionComponent } from "./common/types";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useEffect, useState } from "react";
 import appConfigStore from "./store/appConfigStore";
 import { ETheme } from "./helpers/enum";
 import MainLoading from "./components/loading/MainLoading.tsx";
-const queryClient = new QueryClient();
 
 type AppProps = { router: ReturnType<typeof createBrowserRouter> };
 
 const App = ({ router }: AppProps): FunctionComponent => {
 	const { setTheme } = appConfigStore();
-	const [loading, setLoading] = useState<boolean>(false);
+	const [loading] = useState<boolean>(false);
 
 	useEffect(() => {
 		const themeLocal = JSON.parse(
@@ -26,11 +24,7 @@ const App = ({ router }: AppProps): FunctionComponent => {
 		}
 	}, []);
 
-	return (
-		<QueryClientProvider client={queryClient}>
-			{loading ? <MainLoading /> : <RouterProvider router={router} />}
-		</QueryClientProvider>
-	);
+	return <>{loading ? <MainLoading /> : <RouterProvider router={router} />}</>;
 };
 
 export default App;

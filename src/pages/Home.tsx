@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ProjectCard from "../components/projectCard/ProjectCard";
-import projects from "../config/project.config";
 import { TProject } from "../types/project";
 import Statistic from "../components/statistic/Statistic";
 import Career from "../components/career/Career";
