@@ -8,7 +8,7 @@ const ProjectCard = ({ project }: TProps) => {
 	return (
 		<div className="relative w-full h-full mx-auto text-white flex">
 			<div
-				className="p-6 flex-1 bg-gradient-to-b from-[#c44242] to-[#d06a5d] rounded-2xl"
+				className="p-3 lg:p-6 flex-1 bg-gradient-to-b from-[#c44242] to-[#d06a5d] rounded-2xl"
 				style={{
 					WebkitMaskImage: `linear-gradient(to right, black 0%, black 70%, transparent 100%)`,
 					maskImage: `linear-gradient(to right, black 0%, black 70%, transparent 100%)`,
@@ -19,18 +19,18 @@ const ProjectCard = ({ project }: TProps) => {
 				}}
 			>
 				<div className="flex gap-2">
-					<span className="bg-[#fffcc0] text-gray-800 text-sm px-3 py-1 rounded-full">
+					<span className="bg-[#fffcc0] text-gray-800 flex items-center justify-center px-2 lg:px-3 py-1 rounded-full text-xs lg:text-base">
 						#productivity
 					</span>
-					<span className="bg-[#fffcc0] text-gray-800 text-sm px-3 py-1 rounded-full">
+					<span className="bg-[#fffcc0] text-gray-800 flex items-center justify-center px-2 lg:px-3 py-1 rounded-full text-xs lg:text-base">
 						#notes
 					</span>
 				</div>
 
-				<h2 className="text-3xl text-text-primary font-bold mt-4 mb-2">
+				<h2 className="text-xl lg:text-3xl text-text-primary font-bold mt-4 mb-2">
 					{project.name}
 				</h2>
-				<p className="w-[70%] leading-relaxed text-text-primary">
+				<p className="text-sm lg:text-base w-[90%] lg:w-[70%] leading-relaxed text-text-primary">
 					{project.desc}
 				</p>
 				<div className="flex items-center gap-1 mt-4">
@@ -53,7 +53,7 @@ const ProjectCard = ({ project }: TProps) => {
 			<img
 				src={project.preview}
 				alt={project.name}
-				className="absolute h-[280px] right-0 bottom-[-10px] object-contain z-20 pointer-events-none"
+				className="absolute hidden sm:block h-[280px] right-0 bottom-[-10px] object-contain z-20 pointer-events-none"
 			/>
 		</div>
 	);
@@ -68,13 +68,13 @@ ProjectCard.Sub = ({ project, selectProject }: TProps) => {
 			<img
 				src={project.thumb}
 				alt="Avatar"
-				className="w-[50px] h-[50px] rounded-2xl mr-4 object-cover"
+				className="size-[50px] rounded-2xl mr-4 object-cover"
 			/>
 			<div className="flex-1">
 				<div className="text-text-primary font-semibold text-lg">
 					{project.name}
 				</div>
-				<div className="text-text-secondary text-sm">
+				<div className="hidden md:block text-text-secondary text-sm">
 					(Standard Edition + Starter Pass)
 				</div>
 			</div>

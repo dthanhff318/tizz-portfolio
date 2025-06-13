@@ -10,7 +10,7 @@ const Home = () => {
 	const [isCareerAtEnd, setIsCareerAtEnd] = useState(false);
 	const { project, remainingProjects, setProject } = projectStore();
 	return (
-		<div className="relative flex flex-col justify-center w-full h-full items-center gap-6 flex-1 px-6">
+		<div className="relative flex flex-col justify-start sm:justify-center w-full h-full items-center gap-2 lg:gap-6 flex-1 px-4 lg:px-6 overflow-y-scroll">
 			<div className="flex justify-between w-full">
 				<div className="flex gap-2">
 					<p className="text-text-secondary text-2xl">Hi,</p>
@@ -20,7 +20,7 @@ const Home = () => {
 					<p></p>
 				</div>
 			</div>
-			<div className="grid grid-cols-[1fr_40%] gap-4 w-full">
+			<div className="grid grid-cols-1 lg:grid-cols-[1fr_40%] gap-4 w-full">
 				<div>
 					<ProjectCard project={project} />
 				</div>
