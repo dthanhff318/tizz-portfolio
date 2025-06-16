@@ -4,7 +4,9 @@ const Statistic = () => {
 	return (
 		<div className="h-full flex flex-col gap-4">
 			<div className="">
-				<p className="text-text-primary text-2xl font-semibold">My statistic</p>
+				<p className="text-text-primary text-lg md:text-2xl font-semibold">
+					My statistic
+				</p>
 			</div>
 			<div className="bg-primary-bold rounded-3xl flex flex-col flex-1 items-center justify-center">
 				<div className="relative w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64">

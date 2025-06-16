@@ -9,7 +9,9 @@ const Layout = (): FunctionComponent => {
 			<div className="flex-1">
 				<Outlet />
 			</div>
-			<Navbar />
+			<div className="hidden sm:block">
+				<Navbar />
+			</div>
 		</div>
 	);
 };

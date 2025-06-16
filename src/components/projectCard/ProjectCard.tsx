@@ -27,7 +27,7 @@ const ProjectCard = ({ project }: TProps) => {
 					</span>
 				</div>
 
-				<h2 className="text-xl lg:text-3xl text-text-primary font-bold mt-4 mb-2">
+				<h2 className="text-base lg:text-3xl text-text-primary font-bold mt-4 mb-2">
 					{project.name}
 				</h2>
 				<p className="text-sm lg:text-base w-[90%] lg:w-[70%] leading-relaxed text-text-primary">
@@ -71,7 +71,7 @@ ProjectCard.Sub = ({ project, selectProject }: TProps) => {
 				className="size-[50px] rounded-2xl mr-4 object-cover"
 			/>
 			<div className="flex-1">
-				<div className="text-text-primary font-semibold text-lg">
+				<div className="text-text-primary font-semibold text-sm sm:text-lg">
 					{project.name}
 				</div>
 				<div className="hidden md:block text-text-secondary text-sm">

@@ -10,11 +10,11 @@ const Home = () => {
 	const [isCareerAtEnd, setIsCareerAtEnd] = useState(false);
 	const { project, remainingProjects, setProject } = projectStore();
 	return (
-		<div className="relative flex flex-col justify-start sm:justify-center w-full h-full items-center gap-2 lg:gap-6 flex-1 px-4 lg:px-6 overflow-y-scroll">
+		<div className="relative flex flex-col justify-start w-full h-full items-center gap-2 lg:gap-6 flex-1 px-4 lg:px-6 overflow-y-scroll">
 			<div className="flex justify-between w-full">
 				<div className="flex gap-2">
-					<p className="text-text-secondary text-2xl">Hi,</p>
-					<p className="text-text-primary text-2xl">I'm t1zz</p>
+					<p className="text-text-secondary text-lg sm:text-2xl">Hi,</p>
+					<p className="text-text-primary text-lg sm:text-2xl">I'm t1zz</p>
 				</div>
 				<div>
 					<p></p>

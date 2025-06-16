@@ -128,9 +128,11 @@ const Career = ({ onScrollChange }: CareerProps = {}) => {
 	}, [onScrollChange]);
 
 	return (
-		<div className="h-fit w-full flex flex-col gap-4 overflow-visible group/career translate-y-4  pb-4">
+		<div className="h-fit w-full flex flex-col gap-4 overflow-visible group/career pb-4">
 			<div className="">
-				<p className="text-text-primary text-2xl font-semibold">My career</p>
+				<p className="text-text-primary text-lg md:text-2xl font-semibold">
+					My career
+				</p>
 			</div>
 			<div
 				ref={scrollContainerRef}
@@ -157,7 +159,7 @@ const Career = ({ onScrollChange }: CareerProps = {}) => {
 
 Career.Card = ({ name, startTime, endTime, thumb }: TCareer) => {
 	return (
-		<div className="group aspect-square h-[160px] w-[160px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] lg:h-[240px] lg:w-[240px] rounded-3xl relative flex-shrink-0 hover:z-10">
+		<div className="group aspect-square h-[160px] w-[160px] sm:size-[180px] size-[200px] rounded-3xl relative flex-shrink-0 hover:z-10">
 			<div
 				className="absolute inset-0 z-0 aspect-square rounded-3xl"
 				style={{
