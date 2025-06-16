@@ -159,7 +159,7 @@ const Career = ({ onScrollChange }: CareerProps = {}) => {
 
 Career.Card = ({ name, startTime, endTime, thumb }: TCareer) => {
 	return (
-		<div className="group aspect-square h-[160px] w-[160px] sm:size-[180px] size-[200px] rounded-3xl relative flex-shrink-0 hover:z-10">
+		<div className="group aspect-square size-[120px] sm:size-[120px] lg:size-[160px] rounded-3xl relative flex-shrink-0 hover:z-10">
 			<div
 				className="absolute inset-0 z-0 aspect-square rounded-3xl"
 				style={{
@@ -181,9 +181,9 @@ Career.Card = ({ name, startTime, endTime, thumb }: TCareer) => {
 					draggable={false}
 				/>
 				<div className="absolute top-0 left-0 bottom-0 flex flex-col justify-between gap-2 p-3 sm:p-4">
-					<button className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-[#be3f3a] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:rotate-[75deg] transition-all duration-300">
+					<button className="relative size-6 sm:size-8 lg:size-10 bg-[#be3f3a] rounded-full flex flex-shrink-0 items-center justify-center opacity-0 group-hover:opacity-100 group-hover:rotate-[75deg] transition-all duration-300">
 						<svg
-							className="mb-1 w-5 h-5 sm:w-6 sm:h-6 lg:w-[29px] lg:h-[29px]"
+							className="mb-1 size-4 sm:size-5 lg:size-6"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 29 29"
 						>
@@ -195,7 +195,7 @@ Career.Card = ({ name, startTime, endTime, thumb }: TCareer) => {
 						</svg>
 					</button>
 					<div className="flex flex-col justify-end-end gap-1 sm:gap-2">
-						<p className="text-text-primary text-lg sm:text-xl lg:text-2xl font-semibold group-hover:translate-y-0 translate-y-3 transition-all duration-300">
+						<p className="text-text-primary text-base sm:text-lg lg:text-xl font-semibold group-hover:translate-y-0 translate-y-3 transition-all duration-300">
 							{name}
 						</p>
 						<p className="text-[#cf675b] text-xs sm:text-sm opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-3 transition-all duration-300">

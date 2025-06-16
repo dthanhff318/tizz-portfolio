@@ -29,7 +29,7 @@ const MusicPlayer = () => {
 		>
 			<MusicDisc
 				backgroundImage="/assets/avatar.jpg"
-				size={150}
+				size={100}
 				isPlaying={isPlaying}
 				rotationSpeed={10}
 			/>

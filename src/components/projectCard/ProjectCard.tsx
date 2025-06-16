@@ -19,10 +19,10 @@ const ProjectCard = ({ project }: TProps) => {
 				}}
 			>
 				<div className="flex gap-2">
-					<span className="bg-[#fffcc0] text-gray-800 flex items-center justify-center px-2 lg:px-3 py-1 rounded-full text-xs lg:text-base">
+					<span className="bg-[#fffcc0] text-gray-800 flex items-center justify-center px-2 lg:px-3 py-1 rounded-full text-xs lg:text-sm">
 						#productivity
 					</span>
-					<span className="bg-[#fffcc0] text-gray-800 flex items-center justify-center px-2 lg:px-3 py-1 rounded-full text-xs lg:text-base">
+					<span className="bg-[#fffcc0] text-gray-800 flex items-center justify-center px-2 lg:px-3 py-1 rounded-full text-xs lg:text-sm">
 						#notes
 					</span>
 				</div>
@@ -30,7 +30,7 @@ const ProjectCard = ({ project }: TProps) => {
 				<h2 className="text-base lg:text-3xl text-text-primary font-bold mt-4 mb-2">
 					{project.name}
 				</h2>
-				<p className="text-sm lg:text-base w-[90%] lg:w-[70%] leading-relaxed text-text-primary">
+				<p className="text-sm lg:text-base w-[90%] lg:w-[90%] leading-relaxed text-text-primary">
 					{project.desc}
 				</p>
 				<div className="flex items-center gap-1 mt-4">
@@ -50,11 +50,11 @@ const ProjectCard = ({ project }: TProps) => {
 				</div>
 			</div>
 
-			<img
+			{/* <img
 				src={project.preview}
 				alt={project.name}
 				className="absolute hidden sm:block h-[280px] right-0 bottom-[-10px] object-contain z-20 pointer-events-none"
-			/>
+			/> */}
 		</div>
 	);
 };
