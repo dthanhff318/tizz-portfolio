@@ -33,9 +33,9 @@ const MusicPlayer = () => {
 				isPlaying={isPlaying}
 				rotationSpeed={10}
 			/>
-			<div className="flex gap-16 ml-4">
+			<div className="flex gap-4 sm:gap-16 ml-2 sm:ml-4 items-center">
 				<div className="flex flex-col gap-3">
-					<span className="text-text-primary text-2xl font-bold">
+					<span className="text-text-primary text-lg sm:text-2xl font-bold">
 						See you again
 					</span>
 					<span className="text-text-secondary">With KaliFa</span>

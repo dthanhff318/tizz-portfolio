@@ -18,8 +18,6 @@ const MusicDisc = ({
 	const lastTime = useRef(Date.now());
 
 	const discStyle = {
-		width: `${size}px`,
-		height: `${size}px`,
 		backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
 		backgroundSize: "cover",
 		backgroundPosition: "center",
@@ -90,15 +88,15 @@ const MusicDisc = ({
 	}, [isPlaying, degreesPerMs]);
 
 	return (
-		<div className="flex items-center justify-center p-8">
+		<div className="flex items-center justify-center p-4 lg:p-8">
 			<div
-				className="relative"
-				style={{ width: `${size}px`, height: `${size}px` }}
+				className="relative size-20 sm:size-24 md:size-32 lg:size-40"
+				// style={{ width: `${size}px`, height: `${size}px` }}
 			>
 				{/* Main disc */}
 				<div
 					ref={discRef}
-					className={`w-full h-full rounded-full shadow-2xl transition-none ${
+					className={`size-20 sm:size-24 md:size-32 lg:size-40 w-full h-full rounded-full shadow-2xl transition-none ${
 						!backgroundImage
 							? "bg-gradient-to-br from-gray-900 via-gray-800 to-black"
 							: ""

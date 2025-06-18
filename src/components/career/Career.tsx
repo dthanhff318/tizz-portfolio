@@ -157,7 +157,10 @@ const Career = ({ onScrollChange }: CareerProps = {}) => {
 	);
 };
 
-Career.Card = ({ name, startTime, endTime, thumb }: TCareer) => {
+Career.Card = ({ name, startTime, endTime, thumb, link }: TCareer) => {
+	const handleClickLink = () => {
+		window.open(link, "_blank");
+	};
 	return (
 		<div className="group aspect-square size-[120px] sm:size-[120px] lg:size-[160px] rounded-3xl relative flex-shrink-0 hover:z-10">
 			<div
@@ -181,7 +184,10 @@ Career.Card = ({ name, startTime, endTime, thumb }: TCareer) => {
 					draggable={false}
 				/>
 				<div className="absolute top-0 left-0 bottom-0 flex flex-col justify-between gap-2 p-3 sm:p-4">
-					<button className="relative size-6 sm:size-8 lg:size-10 bg-[#be3f3a] rounded-full flex flex-shrink-0 items-center justify-center opacity-0 group-hover:opacity-100 group-hover:rotate-[75deg] transition-all duration-300">
+					<button
+						className="cursor-pointer relative size-6 sm:size-8 lg:size-10 bg-[#be3f3a] rounded-full flex flex-shrink-0 items-center justify-center opacity-0 group-hover:opacity-100 group-hover:rotate-[75deg] transition-all duration-300"
+						onClick={handleClickLink}
+					>
 						<svg
 							className="mb-1 size-4 sm:size-5 lg:size-6"
 							xmlns="http://www.w3.org/2000/svg"

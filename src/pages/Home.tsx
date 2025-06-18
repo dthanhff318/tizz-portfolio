@@ -10,7 +10,7 @@ const Home = () => {
 	const [isCareerAtEnd, setIsCareerAtEnd] = useState(false);
 	const { project, remainingProjects, setProject } = projectStore();
 	return (
-		<div className="relative flex flex-col justify-start w-full h-full items-center gap-2 lg:gap-4 flex-1 px-4 lg:px-6 overflow-y-scroll lg:overflow-auto">
+		<div className="relative flex flex-col justify-start w-full h-full items-center gap-6 lg:gap-4 flex-1 px-4 lg:px-6 overflow-y-scroll lg:overflow-auto">
 			<div className="flex justify-between w-full">
 				<div className="flex gap-2">
 					<p className="text-text-secondary text-lg sm:text-2xl">Hi,</p>
@@ -34,8 +34,8 @@ const Home = () => {
 					))}
 				</div>
 			</div>
-			<div className="grid grid-cols-1 lg:grid-cols-[1fr_40%] flex-1 w-full min-h-0 h-full relative">
-				<div className="h-max lg:h-full overflow-x-auto flex flex-col gap-2 relative career-container">
+			<div className="grid grid-cols-1 lg:grid-cols-[1fr_40%] flex-1 w-full min-h-0 h-full relative gap-4 lg:gap-0">
+				<div className="h-max lg:h-full overflow-x-hidden lg:overflow-x-auto flex flex-col gap-2 relative career-container">
 					<Career onScrollChange={setIsCareerAtEnd} />
 					<div
 						className={`absolute top-0 bottom-0 right-0 w-20 h-full bg-gradient-to-l from-primary to-transparent pointer-events-none transition-opacity duration-300 ${

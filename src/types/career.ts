@@ -3,4 +3,5 @@ export type TCareer = {
 	startTime: number;
 	endTime: number | string;
 	thumb: string;
+	link: string;
 };
