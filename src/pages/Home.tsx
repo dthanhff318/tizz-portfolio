@@ -1,57 +1,102 @@
-import { useState } from "react";
-import ProjectCard from "../components/projectCard/ProjectCard";
-import { TProject } from "../types/project";
-import Statistic from "../components/statistic/Statistic";
-import Career from "../components/career/Career";
-import projectStore from "../store/projectStore";
-import MusicPlayer from "../components/musicPlayer/musicPlayer";
+import React from "react";
 
-const Home = () => {
-	const [isCareerAtEnd, setIsCareerAtEnd] = useState(false);
-	const { project, remainingProjects, setProject } = projectStore();
+const DynamicRowLayout = () => {
+	// Mảng các block content - bạn có thể thêm/bớt block ở đây
+	const contentBlocks = [
+		{
+			id: 1,
+			title: "Block 1 - Giới thiệu",
+			content:
+				"Đây là block đầu tiên với nội dung giới thiệu. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+		},
+		{
+			id: 2,
+			title: "Block 2 - Dịch vụ",
+			content:
+				"Block thứ hai mô tả về các dịch vụ. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		},
+		{
+			id: 3,
+			title: "Block 3 - Tính năng",
+			content:
+				"Block thứ ba giới thiệu tính năng. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+		},
+		{
+			id: 4,
+			title: "Block 4 - Liên hệ",
+			content:
+				"Block cuối cùng về thông tin liên hệ. Duis aute irure dolor in reprehenderit in voluptate velit esse.",
+		},
+		// Thêm block mới ở đây để tạo row mới
+		{
+			id: 5,
+			title: "Block 5 - Thêm nội dung",
+			content:
+				"Block mới được thêm vào sẽ tạo row mới. Excepteur sint occaecat cupidatat non proident.",
+		},
+	];
+
 	return (
-		<div className="relative flex flex-col justify-start w-full h-full items-center gap-6 lg:gap-4 flex-1 px-4 lg:px-6 overflow-y-scroll lg:overflow-auto">
-			<div className="flex justify-between w-full">
-				<div className="flex gap-2">
-					<p className="text-text-secondary text-lg sm:text-2xl">Hi,</p>
-					<p className="text-text-primary text-lg sm:text-2xl">I'm t1zz</p>
-				</div>
-				<div>
-					<p></p>
-				</div>
-			</div>
-			<div className="grid grid-cols-1 lg:grid-cols-[1fr_40%] gap-4 w-full">
-				<div>
-					<ProjectCard project={project} />
-				</div>
-				<div className="space-y-4">
-					{remainingProjects.map((project, index) => (
-						<ProjectCard.Sub
-							key={index}
-							selectProject={setProject}
-							project={project as TProject}
-						/>
-					))}
-				</div>
-			</div>
-			<div className="grid grid-cols-1 lg:grid-cols-[1fr_40%] flex-1 w-full min-h-0 h-full relative gap-4 lg:gap-0">
-				<div className="h-max lg:h-full overflow-x-hidden lg:overflow-x-auto flex flex-col gap-2 relative career-container">
-					<Career onScrollChange={setIsCareerAtEnd} />
-					<div
-						className={`absolute top-0 bottom-0 right-0 w-20 h-full bg-gradient-to-l from-primary to-transparent pointer-events-none transition-opacity duration-300 ${
-							isCareerAtEnd ? "opacity-0" : "opacity-100"
-						}`}
-					></div>
-					<div className="flex-1">
-						<MusicPlayer />
-					</div>
-				</div>
-				<div className="h-[250px] lg:h-full flex-1">
-					<Statistic />
-				</div>
+		<div className="min-h-screen bg-orange-50">
+			{/* Container chính */}
+			<div className="grid grid-cols-3">
+				{/* Tạo row cho mỗi content block */}
+				{contentBlocks.map((block, index) => (
+					<React.Fragment key={block.id}>
+						{/* Cột trái - trống */}
+						<div className="border-r border-b border-black bg-orange-50 min-h-[200px]"></div>
+
+						{/* Cột giữa - chứa content block */}
+						<div className="border-r border-b border-black bg-white p-8 min-h-[200px] flex items-center">
+							<div className="w-full">
+								<h2 className="text-2xl font-bold text-gray-800 mb-4">
+									{block.title}
+								</h2>
+								<p className="text-gray-600 leading-relaxed mb-4">
+									{block.content}
+								</p>
+
+								{/* Thêm một số element khác nếu cần */}
+								<div className="flex items-center justify-between">
+									<span className="text-sm text-gray-400">
+										Block #{block.id}
+									</span>
+									<button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm transition-colors">
+										Xem thêm
+									</button>
+								</div>
+							</div>
+						</div>
+
+						{/* Cột phải - trống */}
+						<div className="border-b border-black bg-orange-50 min-h-[200px]"></div>
+					</React.Fragment>
+				))}
 			</div>
 		</div>
 	);
 };
 
-export default Home;
+// Component để thêm block mới dễ dàng
+const ContentBlock = ({ title, children, blockNumber }) => (
+	<React.Fragment>
+		{/* Cột trái */}
+		<div className="border-r border-b border-black bg-orange-50 min-h-[200px]"></div>
+
+		{/* Cột giữa - content */}
+		<div className="border-r border-b border-black bg-white p-8 min-h-[200px] flex items-center">
+			<div className="w-full">
+				<h2 className="text-2xl font-bold text-gray-800 mb-4">{title}</h2>
+				<div className="text-gray-600">{children}</div>
+				<div className="mt-4 flex items-center justify-between">
+					<span className="text-sm text-gray-400">Block #{blockNumber}</span>
+				</div>
+			</div>
+		</div>
+
+		{/* Cột phải */}
+		<div className="border-b border-black bg-orange-50 min-h-[200px]"></div>
+	</React.Fragment>
+);
+
+export default DynamicRowLayout;
