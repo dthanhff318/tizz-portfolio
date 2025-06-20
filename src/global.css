@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Jersey+15&family=Manrope:wght@200..800&family=Pixelify+Sans:wght@400..700&display=swap");
+
 body {
 	overflow: hidden;
-	font-family: "Oswald", sans-serif;
 	font-optical-sizing: auto;
 	/* Hide scrollbar */
 	* {
