@@ -1,13 +1,15 @@
 import React from "react";
-import NameBlock from "../components/name-block.tsx/NameBlock";
+import NameBlock from "@/components/name-block.tsx/NameBlock";
+import DescriptionBlock from "@/components/description-block/DescriptionBlock";
+import TechStackBlock from "@/components/techstack-block/TechStackBlock";
+import LogoBlock from "@/components/logo-block/LogoBlock";
 
 const DynamicRowLayout = () => {
-	// Mảng các block content - bạn có thể thêm/bớt block ở đây
 	const contentBlocks = [
+		<LogoBlock />,
 		<NameBlock />,
-		<NameBlock />,
-		<NameBlock />,
-		<NameBlock />,
+		<DescriptionBlock />,
+		<TechStackBlock />,
 	];
 
 	return (
@@ -18,17 +20,17 @@ const DynamicRowLayout = () => {
 				{contentBlocks.map((Block, index) => (
 					<React.Fragment key={index}>
 						{/* Left column */}
-						<div className="border-r border-b border-border-primary min-h-[150px]"></div>
+						<div className="border-r border-b border-border-primary"></div>
 
 						{/* Middle column */}
-						<div className="border-r border-b border-border-primary p-8 min-h-[200px] flex items-center">
+						<div className="border-r border-b border-border-primary flex items-center">
 							<div className="w-full">
 								<>{Block}</>
 							</div>
 						</div>
 
 						{/* Right column */}
-						<div className="border-b border-border-primary  min-h-[150px]"></div>
+						<div className="border-b border-border-primary "></div>
 					</React.Fragment>
 				))}
 			</div>
