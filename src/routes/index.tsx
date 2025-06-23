@@ -1,10 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../components/layout/Layout";
-import Projects from "../pages/Projects";
 import Home from "./../pages/Home";
 import EPath from "./path";
 import AnimateRouting from "./AnimateRouting";
-import Career from "../pages/Career";
 
 const router = createBrowserRouter([
 	{

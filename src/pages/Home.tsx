@@ -3,19 +3,21 @@ import NameBlock from "@/components/name-block.tsx/NameBlock";
 import DescriptionBlock from "@/components/description-block/DescriptionBlock";
 import TechStackBlock from "@/components/techstack-block/TechStackBlock";
 import LogoBlock from "@/components/logo-block/LogoBlock";
+import CrossBlock from "@/components/decorated-block/CrossBlock";
 
 const DynamicRowLayout = () => {
 	const contentBlocks = [
 		<LogoBlock />,
 		<NameBlock />,
 		<DescriptionBlock />,
+		<CrossBlock />,
 		<TechStackBlock />,
 	];
 
 	return (
 		<div className="min-h-screen">
 			{/* Container  */}
-			<div className="grid grid-cols-[30%_40%_30%]">
+			<div className="grid grid-cols-[10%_80%_10%] sm:grid-cols-[20%_60%_20%] lg:grid-cols-[30%_40%_30%]">
 				{/* Each block */}
 				{contentBlocks.map((Block, index) => (
 					<React.Fragment key={index}>

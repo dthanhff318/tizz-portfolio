@@ -12,7 +12,6 @@ const NameBlock = () => {
 						text="Dinh Duy Thanh"
 						delay={800}
 					/>
-					<span className="text-3xl">&#x1F1FB;&#x1F1F3;</span>
 				</div>
 				<div className="flex">
 					<SlidingNumber

@@ -1,4 +1,4 @@
-import { Hammer, SendHorizontal } from "lucide-react";
+import { Github, Hammer, MapPin, SendHorizontal } from "lucide-react";
 
 const DescriptionBlock = () => {
 	const configs = [
@@ -28,12 +28,31 @@ const DescriptionBlock = () => {
 				</a>
 			),
 		},
+		{
+			icon: <MapPin className="size-4 text-text-primary" />,
+			text: <p className="text-text-secondary text-sm">Ha Noi, Vietnam</p>,
+		},
+		{
+			icon: <Github className="size-4 text-text-primary" />,
+			text: (
+				<a
+					href="https://github.com/dthanhff318"
+					className="text-text-secondary text-sm font-bold"
+					target="_blank"
+				>
+					@github.com/dthanhff318
+				</a>
+			),
+		},
 	];
 	return (
 		<div className="space-y-2">
 			<div className="p-2">
-				<p className="text-text-secondary text-sm font-bold">
-					Hi-am a web developer
+				<p className="text-text-secondary text-sm font-semibold">
+					Hi-am a web developer with 3 years of experience in developing, and
+					maintaining websites and web applications. I am passionate about
+					creating user-friendly and efficient solutions. I look forward to
+					contributing my skills to new and exciting projects.
 				</p>
 			</div>
 			<div
