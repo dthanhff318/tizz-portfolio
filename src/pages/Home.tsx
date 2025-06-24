@@ -7,6 +7,7 @@ import {
 	CrossBlock,
 	CrossRightToLeftBlock,
 } from "@/components/decorated-block/CrossBlock";
+import ProjectBlock from "@/components/project-block/ProjectBlock";
 
 const DynamicRowLayout = () => {
 	const contentBlocks = [
@@ -16,6 +17,7 @@ const DynamicRowLayout = () => {
 		<CrossBlock />,
 		<TechStackBlock />,
 		<CrossRightToLeftBlock />,
+		<ProjectBlock />,
 	];
 
 	return (
