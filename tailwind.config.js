@@ -9,7 +9,6 @@ export default {
 					DEFAULT: "hsl(var(--primary))",
 					foreground: "hsl(var(--primary-foreground))",
 				},
-				background: "#171717",
 				"text-primary": "#fffafb",
 				"text-secondary": "#cfcfcf",
 				"border-primary": "#565656",
