@@ -47,12 +47,15 @@ const DescriptionBlock = () => {
 	];
 	return (
 		<div className="space-y-2">
-			<div className="p-2">
+			<div className="p-2 space-y-3">
 				<p className="text-text-secondary text-sm font-semibold">
 					Hi-am a web developer with 3 years of experience in developing, and
 					maintaining websites and web applications. I am passionate about
-					creating user-friendly and efficient solutions. I look forward to
-					contributing my skills to new and exciting projects.
+					building interesting, impressive, and efficient web applications for
+					users.
+				</p>
+				<p className="text-text-secondary text-sm italic">
+					-I learn from the failures of people who took my advice 🤷‍♂️
 				</p>
 			</div>
 			<div

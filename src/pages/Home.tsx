@@ -3,7 +3,10 @@ import NameBlock from "@/components/name-block.tsx/NameBlock";
 import DescriptionBlock from "@/components/description-block/DescriptionBlock";
 import TechStackBlock from "@/components/techstack-block/TechStackBlock";
 import LogoBlock from "@/components/logo-block/LogoBlock";
-import CrossBlock from "@/components/decorated-block/CrossBlock";
+import {
+	CrossBlock,
+	CrossRightToLeftBlock,
+} from "@/components/decorated-block/CrossBlock";
 
 const DynamicRowLayout = () => {
 	const contentBlocks = [
@@ -12,6 +15,7 @@ const DynamicRowLayout = () => {
 		<DescriptionBlock />,
 		<CrossBlock />,
 		<TechStackBlock />,
+		<CrossRightToLeftBlock />,
 	];
 
 	return (
