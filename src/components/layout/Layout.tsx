@@ -4,7 +4,6 @@ import { FunctionComponent } from "../../common/types";
 const Layout = (): FunctionComponent => {
 	return (
 		<div className="relative w-screen h-screen bg-primary overflow-y-auto overflow-x-hidden flex">
-			{/* <Navbar /> */}
 			<div className="flex-1">
 				<Outlet />
 			</div>
