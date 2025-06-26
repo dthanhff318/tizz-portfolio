@@ -5,7 +5,7 @@ import {
 	AccordionTrigger,
 } from "@/components/animate-ui/base/accordion";
 import careerConfig from "@/config/career.config";
-import { Hourglass, Code, Dot } from "lucide-react";
+import { Hourglass, Code, Dot, Globe } from "lucide-react";
 
 const ExperienceBlock = () => {
 	return (
@@ -36,7 +36,7 @@ const ExperienceBlock = () => {
 										<div className="bg-muted p-1 rounded-sm">
 											<Hourglass className="size-4" />
 										</div>
-										<p>
+										<p className="font-semibold">
 											{career.startTime} - {career.endTime}
 										</p>
 									</div>
@@ -45,7 +45,7 @@ const ExperienceBlock = () => {
 											<div className="bg-muted p-1 rounded-sm">
 												<Code className="size-4" />
 											</div>
-											<p>{career.role}</p>
+											<p className="font-semibold">{career.role}</p>
 										</div>
 									)}
 									<div className="flex gap-2 items-center text-text-primary pl-3">
@@ -54,17 +54,19 @@ const ExperienceBlock = () => {
 											<p>Working ...</p>
 										</div>
 									</div>
-									<p>
-										Ref:{" "}
+									<div className="flex items-center gap-2">
+										<div className="bg-muted p-1 rounded-sm">
+											<Globe className="size-4" />
+										</div>
 										<a
 											href={career.link}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="font-semibold underline"
+											className="font-semibold hover:underline"
 										>
 											{career.name}
 										</a>
-									</p>
+									</div>
 								</div>
 							</AccordionPanel>
 						</AccordionItem>

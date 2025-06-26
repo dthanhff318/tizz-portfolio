@@ -72,13 +72,8 @@ const DescriptionBlock = () => {
 			<div className="flex items-center mt-4 p-2">
 				<div className="w-full flex flex-col gap-2">
 					{configs.map((config, index) => (
-						<div className="flex items-center gap-2">
-							<div
-								key={index}
-								className="flex bg-border-secondary p-1 rounded-md items-center justify-center"
-							>
-								{config.icon}
-							</div>
+						<div key={index} className="flex items-center gap-2">
+							<div className="bg-muted p-1 rounded-sm">{config.icon}</div>
 							{config.text}
 						</div>
 					))}
