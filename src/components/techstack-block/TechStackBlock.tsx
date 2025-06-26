@@ -70,7 +70,7 @@ const TechStackBlock = () => {
 	];
 	return (
 		<div className="p-2 space-y-4">
-			<p className="text-text-primary text-sm font-bold">Tech Stack:</p>
+			<p className="text-text-primary text-xl font-bold">Tech Stack:</p>
 			<TooltipProvider openDelay={100}>
 				<div className="flex flex-col gap-3">
 					<div className="flex items-center gap-3">

@@ -10,10 +10,11 @@ const projects = [
 	{
 		name: "Fundpop Crowdfunding",
 		thumb: tizZotePreview,
-		desc: "Fundpop empowers merchants to run professional crowdfunding campaigns directly on their store. Choose between instant payments or pre-orders with flexible funding options.",
+		desc: "Fundpop Crowdfunding is a powerful Shopify app that enables merchants to launch and manage professional crowdfunding campaigns directly within their online store. This seamless integration allows store owners to leverage their existing customer base while maintaining their brand identity throughout the fundraising process.",
 		url: "https://tizz-note.vercel.app/",
 		tech: [ReactIcon, ShopifyIcon, PostgresIcon, RedisIcon],
 		preview: fundpopPreview,
+		tag: "@fundpop-crowfunding",
 	},
 	{
 		name: "tizZote",
@@ -22,14 +23,16 @@ const projects = [
 		url: "https://tizz-note.vercel.app/",
 		tech: [ReactIcon, ShopifyIcon, PostgresIcon, RedisIcon],
 		preview: gewPreview,
+		tag: "@tizz-note",
 	},
 	{
 		name: "GEW",
 		thumb: gewThumb,
-		desc: "In GEW - Golden egg wonderland, nurture enchanted birds to produce golden eggs and earn exclusive NFT rewards. Hatch, collect, and trade your treasures!",
+		desc: "Taking Play-To-Earn (P2E) web3 gaming to the next level, Golden Egg Wonderland offers a new style of gaming, Play-For-Gold (P4G). Players have the chance to win Golden Egg NFTs which could be traded in for a real gold egg tied with the identical serial number",
 		url: "https://www.golden-egg-wonderland.io/",
 		tech: [ReactIcon, ShopifyIcon, PostgresIcon, RedisIcon],
 		preview: gewPreview,
+		tag: "@golden-egg-wonderland",
 	},
 ];
 

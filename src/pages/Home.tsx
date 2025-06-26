@@ -8,6 +8,8 @@ import {
 	CrossRightToLeftBlock,
 } from "@/components/decorated-block/CrossBlock";
 import ProjectBlock from "@/components/project-block/ProjectBlock";
+import ExperienceBlock from "@/components/experience-block/ExperienceBlock";
+import DotBlock from "@/components/decorated-block/DotBlock";
 
 const DynamicRowLayout = () => {
 	const contentBlocks = [
@@ -17,13 +19,16 @@ const DynamicRowLayout = () => {
 		<CrossBlock />,
 		<TechStackBlock />,
 		<CrossRightToLeftBlock />,
+		<ExperienceBlock />,
+		<DotBlock />,
 		<ProjectBlock />,
+		<DotBlock />,
 	];
 
 	return (
 		<div className="min-h-screen">
 			{/* Container  */}
-			<div className="grid grid-cols-[10%_80%_10%] sm:grid-cols-[20%_60%_20%] lg:grid-cols-[30%_40%_30%]">
+			<div className="grid grid-cols-[10%_80%_10%] sm:grid-cols-[20%_60%_20%] lg:grid-cols-[25%_50%_25%]">
 				{/* Each block */}
 				{contentBlocks.map((Block, index) => (
 					<React.Fragment key={index}>
