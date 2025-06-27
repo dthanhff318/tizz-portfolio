@@ -6,4 +6,8 @@ export type TCareer = {
 	link: string;
 	live?: boolean;
 	role?: string;
+	projects?: {
+		name: string;
+		url: string;
+	}[];
 };

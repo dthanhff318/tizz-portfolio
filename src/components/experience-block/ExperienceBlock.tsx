@@ -5,7 +5,7 @@ import {
 	AccordionTrigger,
 } from "@/components/animate-ui/base/accordion";
 import careerConfig from "@/config/career.config";
-import { Hourglass, Code, Dot, Globe } from "lucide-react";
+import { Hourglass, Code, Globe, Award, BadgeCheck } from "lucide-react";
 
 const ExperienceBlock = () => {
 	return (
@@ -48,11 +48,28 @@ const ExperienceBlock = () => {
 											<p className="font-semibold">{career.role}</p>
 										</div>
 									)}
-									<div className="flex gap-2 items-center text-text-primary pl-3">
-										<div className="flex items-center gap-2">
-											<Dot className="size-4" />
-											<p>Working ...</p>
+									<div className="flex gap-2 items-center text-text-primary">
+										<div className="bg-muted p-1 rounded-sm">
+											<Award className="size-4" />
 										</div>
+										<p className="font-semibold">Products</p>
+									</div>
+									<div className="flex flex-col gap-2 pl-3">
+										{career.projects?.map((project) => (
+											<div key={project.name}>
+												<div className="flex items-center gap-2">
+													<a
+														href={project.url}
+														target="_blank"
+														rel="noopener noreferrer"
+														className="text-sm hover:underline font-semibold text-text-secondary"
+													>
+														{project.name}
+													</a>
+													<BadgeCheck className="size-4 text-sky-400" />
+												</div>
+											</div>
+										))}
 									</div>
 									<div className="flex items-center gap-2">
 										<div className="bg-muted p-1 rounded-sm">

@@ -28,7 +28,7 @@ const DynamicRowLayout = () => {
 	return (
 		<div className="min-h-screen">
 			{/* Container  */}
-			<div className="grid grid-cols-[10%_80%_10%] sm:grid-cols-[20%_60%_20%] lg:grid-cols-[25%_50%_25%]">
+			<div className="grid grid-cols-[8%_84%_8%] sm:grid-cols-[15%_70%_15%] lg:grid-cols-[20%_60%_20%]">
 				{/* Each block */}
 				{contentBlocks.map((Block, index) => (
 					<React.Fragment key={index}>

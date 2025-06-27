@@ -12,6 +12,12 @@ const careerConfig: TCareer[] = [
 		link: "https://nelisoftwares.com/",
 		live: true,
 		role: "Frontend, Backend developer",
+		projects: [
+			{
+				name: "Fundpop Crowdfunding",
+				url: "https://apps.shopify.com/fundpop-crowdfunding",
+			},
+		],
 	},
 	{
 		name: "INTS Company",
