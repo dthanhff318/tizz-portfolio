@@ -5,7 +5,7 @@ import hustThumb from "./assets/logoCareer/hust_university.webp";
 
 const careerConfig: TCareer[] = [
 	{
-		name: "Nelisoftwares Company",
+		name: "Nelisoftwares",
 		startTime: "08/2024",
 		thumb: neliThumb,
 		endTime: "Now",
@@ -16,11 +16,21 @@ const careerConfig: TCareer[] = [
 			{
 				name: "Fundpop Crowdfunding",
 				url: "https://apps.shopify.com/fundpop-crowdfunding",
+				tags: [
+					"Shopify",
+					"React",
+					"Node.js",
+					"TypeScript",
+					"Polaris",
+					"Redis",
+					"Docker",
+					"PostgreSQL",
+				],
 			},
 		],
 	},
 	{
-		name: "INTS Company",
+		name: "INTS",
 		startTime: "2022",
 		endTime: "2024",
 		thumb: intsThumb,

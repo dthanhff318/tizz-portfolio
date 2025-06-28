@@ -9,5 +9,6 @@ export type TCareer = {
 	projects?: {
 		name: string;
 		url: string;
+		tags?: string[];
 	}[];
 };
