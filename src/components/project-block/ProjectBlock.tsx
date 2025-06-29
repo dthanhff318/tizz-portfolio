@@ -1,4 +1,5 @@
 import { Files, Folder, File } from "@/components/animate-ui/components/files";
+import { Link, Scroll } from "lucide-react";
 
 const ProjectBlock = () => {
 	return (
@@ -7,12 +8,31 @@ const ProjectBlock = () => {
 			<div className="flex flex-col gap-3">
 				<Files className="text-text-primary">
 					<Folder name="t1zZote">
-						<File name="file1.txt" />
-						<File name="file2.txt" />
+						<File
+							name="A modern, simpler, all-in-one note-taking platform designed to help individuals and teams organize their thoughts, tasks, and projects seamlessly, inspired by Notion"
+							customIcon={<Scroll />}
+							classForIcon="items-start"
+						/>
+						<File
+							name={
+								(
+									<a
+										href="https://tizz-note.vercel.app/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										https://tizz-note.vercel.app/
+									</a>
+								) as any
+							}
+							customIcon={<Link />}
+							classForIcon="items-start"
+						/>
+						<File name="empty.txt" />
 					</Folder>
 					<Folder name="t1zz-Isme">
-						<File name="file3.txt" />
-						<File name="file4.txt" />
+						<File name="empty.txt" />
+						<File name="empty.txt" />
 					</Folder>
 				</Files>
 			</div>

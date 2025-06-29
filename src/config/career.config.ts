@@ -37,6 +37,13 @@ const careerConfig: TCareer[] = [
 		link: "https://ints.vn/",
 		live: false,
 		role: "Frontend developer",
+		projects: [
+			{
+				name: "Golden Egg Wonderland",
+				url: "https://golden-egg-wonderland.io/",
+				tags: ["Phaser", "React", "Zustand", "TypeScript", "MongoDB"],
+			},
+		],
 	},
 	{
 		name: "HUST",

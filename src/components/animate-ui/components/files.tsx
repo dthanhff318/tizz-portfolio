@@ -36,19 +36,22 @@ function FileButton({
 	icon,
 	open,
 	sideComponent,
+	classForIcon,
 	...props
-}: FileButtonProps) {
+}: FileButtonProps & { classForIcon?: string }) {
 	return (
 		<MotionHighlightItem className="size-full">
 			<div
 				data-slot="file-button"
 				className={cn(
-					"flex items-center truncate gap-2 p-2 h-10 relative z-10 rounded-lg w-full cursor-default",
+					"flex items-center gap-2 p-2 h-fit relative z-10 rounded-lg w-full cursor-default",
 					className
 				)}
 				{...props}
 			>
-				<span className="flex [&_svg]:size-4 [&_svg]:shrink-0 items-center gap-2 shrink-1 truncate">
+				<span
+					className={`flex [&_svg]:size-4 [&_svg]:shrink-0 items-start gap-2 shrink-1 ${classForIcon}`}
+				>
 					{icon
 						? typeof icon !== "string"
 							? icon
@@ -72,9 +75,7 @@ function FileButton({
 									</motion.span>
 								</AnimatePresence>
 							)}
-					<span className="shrink-1 text-sm block truncate break-words">
-						{children}
-					</span>
+					<span className="shrink-1 text-sm block break-words">{children}</span>
 				</span>
 				{sideComponent}
 			</div>
@@ -215,13 +216,22 @@ type FileProps = Omit<React.ComponentProps<"div">, "children"> & {
 	sideComponent?: React.ReactNode;
 };
 
-function File({ name, className, sideComponent, ...props }: FileProps) {
+function File({
+	name,
+	className,
+	sideComponent,
+	customIcon,
+	classForIcon,
+	...props
+}: FileProps & { customIcon?: React.ReactNode; classForIcon?: string }) {
+	const icon = customIcon || <FileIcon />;
 	return (
 		<FileButton
 			data-slot="file"
-			icon={<FileIcon />}
+			icon={icon as any}
 			className={className}
 			sideComponent={sideComponent}
+			classForIcon={classForIcon}
 			{...props}
 		>
 			{name}

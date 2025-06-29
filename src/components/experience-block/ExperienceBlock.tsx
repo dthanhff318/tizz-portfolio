@@ -71,7 +71,7 @@ const ExperienceBlock = () => {
 															</a>
 															<BadgeCheck className="size-4 text-sky-400" />
 														</div>
-														<div className="flex gap-2">
+														<div className="flex gap-2 flex-wrap">
 															{project.tags?.map((tag) => (
 																<Badge
 																	className="text-text-secondary bg-muted hover:bg-muted"
