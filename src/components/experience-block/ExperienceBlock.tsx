@@ -5,13 +5,20 @@ import {
 	AccordionTrigger,
 } from "@/components/animate-ui/base/accordion";
 import careerConfig from "@/config/career.config";
-import { Hourglass, Code, Globe, Award, BadgeCheck } from "lucide-react";
+import {
+	Hourglass,
+	Code,
+	Globe,
+	Award,
+	BadgeCheck,
+	BadgeCheckIcon,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const ExperienceBlock = () => {
 	return (
 		<div className="p-2">
-			<p className="text-text-primary text-xl font-bold">Experience:</p>
+			<p className="text-text-primary text-xl font-bold">Career:</p>
 			<div className="flex flex-col gap-3">
 				<Accordion>
 					{careerConfig.map((career) => (
@@ -71,15 +78,34 @@ const ExperienceBlock = () => {
 															</a>
 															<BadgeCheck className="size-4 text-sky-400" />
 														</div>
-														<div className="flex gap-2 flex-wrap">
-															{project.tags?.map((tag) => (
-																<Badge
-																	className="text-text-secondary bg-muted hover:bg-muted"
-																	variant="secondary"
-																>
-																	{tag}
-																</Badge>
-															))}
+														<div className="flex gap-2 flex-col">
+															<p className="text-text-secondary text-xs">
+																{project.description}
+															</p>
+															<div className="flex flex-col gap-2">
+																{project.achievements?.map((achievement) => (
+																	<Badge
+																		className="text-text-secondary bg-green-600 w-fit hover:bg-green-600"
+																		variant="secondary"
+																	>
+																		<BadgeCheckIcon
+																			size={16}
+																			className="mr-2"
+																		/>
+																		{achievement}
+																	</Badge>
+																))}
+															</div>
+															<div className="flex flex-wrap gap-2">
+																{project.tags?.map((tag) => (
+																	<Badge
+																		className="text-text-secondary bg-muted hover:bg-muted"
+																		variant="secondary"
+																	>
+																		{tag}
+																	</Badge>
+																))}
+															</div>
 														</div>
 													</div>
 												))}
@@ -95,9 +121,9 @@ const ExperienceBlock = () => {
 											href={career.link}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="font-semibold hover:underline"
+											className="font-semibold hover:underline text-text-secondary"
 										>
-											{career.name}
+											@{career.link}
 										</a>
 									</div>
 								</div>

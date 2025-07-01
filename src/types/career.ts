@@ -10,5 +10,7 @@ export type TCareer = {
 		name: string;
 		url: string;
 		tags?: string[];
+		description?: string;
+		achievements?: string[];
 	}[];
 };

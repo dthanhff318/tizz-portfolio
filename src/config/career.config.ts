@@ -26,6 +26,13 @@ const careerConfig: TCareer[] = [
 					"Docker",
 					"PostgreSQL",
 				],
+				description:
+					"This Shopify app helps merchants run crowdfunding campaigns and sell through limited-time sales initiatives.",
+				achievements: [
+					"Top 10 Shopify apps for crowdfunding",
+					"Partner of UwU Market, Spiceology, Lootbloc, and more",
+					"Has Shopify App Store Badge",
+				],
 			},
 		],
 	},
@@ -42,6 +49,9 @@ const careerConfig: TCareer[] = [
 				name: "Golden Egg Wonderland",
 				url: "https://golden-egg-wonderland.io/",
 				tags: ["Phaser", "React", "Zustand", "TypeScript", "MongoDB"],
+				description:
+					"Golden Egg Wonderland is a 2D NFT game using Fruits token.",
+				achievements: [],
 			},
 		],
 	},
