@@ -1,5 +1,6 @@
 import { Files, Folder, File } from "@/components/animate-ui/components/files";
-import { Link, Scroll } from "lucide-react";
+import { Blocks, Link, Scroll } from "lucide-react";
+import projects from "@/config/project.config";
 
 const ProjectBlock = () => {
 	return (
@@ -7,33 +8,32 @@ const ProjectBlock = () => {
 			<p className="text-text-primary text-xl font-bold">Projects:</p>
 			<div className="flex flex-col gap-3">
 				<Files className="text-text-primary">
-					<Folder name="t1zZote">
-						<File
-							name="A modern, simpler, all-in-one note-taking platform designed to help individuals and teams organize their thoughts, tasks, and projects seamlessly, inspired by Notion"
-							customIcon={<Scroll />}
-							classForIcon="items-start"
-						/>
-						<File
-							name={
-								(
-									<a
-										href="https://tizz-note.vercel.app/"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										https://tizz-note.vercel.app/
-									</a>
-								) as any
-							}
-							customIcon={<Link />}
-							classForIcon="items-start"
-						/>
-						<File name="empty.txt" />
-					</Folder>
-					<Folder name="t1zz-Isme">
-						<File name="empty.txt" />
-						<File name="empty.txt" />
-					</Folder>
+					{projects.map((project) => (
+						<Folder name={project.name}>
+							<File
+								name={project.desc}
+								customIcon={<Scroll />}
+								classForIcon="items-start"
+							/>
+							<File name={project.tech.join(", ")} customIcon={<Blocks />} />
+							<File
+								name={
+									(
+										<a
+											href={project.url}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="hover:underline"
+										>
+											@{project.url}
+										</a>
+									) as any
+								}
+								customIcon={<Link />}
+								classForIcon="items-start"
+							/>
+						</Folder>
+					))}
 				</Files>
 			</div>
 		</div>

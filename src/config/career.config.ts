@@ -62,6 +62,7 @@ const careerConfig: TCareer[] = [
 		thumb: hustThumb,
 		link: "https://hust.edu.vn/",
 		live: true,
+		role: "University student",
 	},
 ];
 
