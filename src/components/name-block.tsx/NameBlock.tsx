@@ -42,7 +42,7 @@ const NameBlock = () => {
 						draggable={false}
 						src="/assets/avatar.png"
 						alt="avatar"
-						className="size-40 cover rounded-[50%] object-cover z-1"
+						className="size-32 sm:size-40 cover rounded-[50%] object-cover z-1"
 					/>
 				</SpringElement>
 			</div>

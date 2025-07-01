@@ -1,3 +1,5 @@
+import { GradientText } from "@/components/animate-ui/text/gradient";
+
 const LogoBlock = () => {
 	return (
 		<div
@@ -10,7 +12,12 @@ const LogoBlock = () => {
 				backgroundSize: "10px 10px",
 			}}
 		>
-			<span className="text-text-primary text-4xl font-bold">t1zz</span>
+			<GradientText
+				className="text-4xl font-bold"
+				text="t1zz"
+				neon
+				gradient="linear-gradient(90deg, #ffffff 0%, #bbbbbb 20%, #666666 50%, #bbbbbb 80%, #ffffff 100%)"
+			/>
 		</div>
 	);
 };
