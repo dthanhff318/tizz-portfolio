@@ -1,7 +1,7 @@
 import { TCareer } from "../types/career";
-import neliThumb from "./assets/logoCareer/nelisoftwares.png";
 import intsThumb from "./assets/logoCareer/ints.webp";
 import hustThumb from "./assets/logoCareer/hust_university.webp";
+import neliThumb from "./assets/logoCareer/nelisoftwares.png";
 
 const careerConfig: TCareer[] = [
 	{

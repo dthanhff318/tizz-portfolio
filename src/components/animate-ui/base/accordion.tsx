@@ -39,19 +39,46 @@ type AccordionItemProps = React.ComponentProps<
 	typeof AccordionPrimitive.Item
 > & {
 	children: React.ReactNode;
+	lastItem: boolean;
+	backgroundImage: string;
 };
 
-function AccordionItem({ className, children, ...props }: AccordionItemProps) {
+function AccordionItem({
+	className,
+	children,
+	lastItem,
+	backgroundImage,
+	...props
+}: AccordionItemProps) {
 	const [isOpen, setIsOpen] = React.useState(false);
-
 	return (
 		<AccordionItemContext.Provider value={{ isOpen, setIsOpen }}>
 			<AccordionPrimitive.Item
 				data-slot="accordion-item"
-				className={cn("border-b", className)}
+				className={cn(
+					"border-b border-text-secondary/20 relative",
+					lastItem && "border-b-0",
+					className
+				)}
 				{...props}
 			>
-				{children}
+				<div
+					className="absolute inset-0 z-0 bg-cover bg-center filter blur-sm opacity-20"
+					style={
+						isOpen
+							? {
+									backgroundImage: `url(${backgroundImage})`,
+									backgroundSize: "cover",
+									backgroundPosition: "center",
+									maskImage:
+										"radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%)",
+									WebkitMaskImage:
+										"radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%)",
+								}
+							: {}
+					}
+				/>
+				<div className="relative z-1">{children}</div>
 			</AccordionPrimitive.Item>
 		</AccordionItemContext.Provider>
 	);
@@ -105,7 +132,7 @@ function AccordionTrigger({
 				ref={triggerRef}
 				data-slot="accordion-trigger"
 				className={cn(
-					"flex flex-1 text-start items-center justify-between py-4 font-medium hover:underline",
+					"flex flex-1 text-start items-center justify-between py-4 font-medium hover:underline ",
 					className
 				)}
 				{...props}

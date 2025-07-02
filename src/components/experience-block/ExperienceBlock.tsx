@@ -17,12 +17,17 @@ import { Badge } from "@/components/ui/badge";
 
 const ExperienceBlock = () => {
 	return (
-		<div className="p-2">
+		<div className="p-2 space-y-2">
 			<p className="text-text-primary text-xl font-bold">Career:</p>
 			<div className="flex flex-col gap-3">
 				<Accordion>
-					{careerConfig.map((career) => (
-						<AccordionItem className="text-text-primary">
+					{careerConfig.map((career, index) => (
+						<AccordionItem
+							key={index}
+							lastItem={index === careerConfig.length - 1}
+							backgroundImage={career.thumb}
+							className="text-text-primary"
+						>
 							<AccordionTrigger>
 								<div className="flex items-center gap-3">
 									<img
