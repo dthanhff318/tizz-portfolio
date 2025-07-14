@@ -1,4 +1,5 @@
 import React from "react";
+import NameBlock from "@/components/name-block.tsx/NameBlock";
 import DescriptionBlock from "@/components/description-block/DescriptionBlock";
 import TechStackBlock from "@/components/techstack-block/TechStackBlock";
 import LogoBlock from "@/components/logo-block/LogoBlock";
@@ -13,6 +14,7 @@ import DotBlock from "@/components/decorated-block/DotBlock";
 const DynamicRowLayout = () => {
 	const contentBlocks = [
 		<LogoBlock />,
+		<NameBlock />,
 		<DescriptionBlock />,
 		<CrossBlock />,
 		<TechStackBlock />,

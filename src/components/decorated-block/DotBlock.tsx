@@ -1,7 +1,7 @@
 const DotBlock = () => {
 	return (
 		<div
-			className="min-h-[50px] w-full h-full"
+			className="min-h-[50px] w-full"
 			style={{
 				backgroundImage: `
                   radial-gradient(
