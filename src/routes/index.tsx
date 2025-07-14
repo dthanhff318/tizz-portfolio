@@ -3,8 +3,14 @@ import Layout from "../components/layout/Layout";
 import Home from "./../pages/Home";
 import EPath from "./path";
 import AnimateRouting from "./AnimateRouting";
+import Login from "@/pages/login";
+import AuthCallback from "@/pages/auth";
 
 const router = createBrowserRouter([
+	{
+		path: EPath.Auth,
+		element: <AuthCallback />,
+	},
 	{
 		path: EPath.Home,
 		element: (
@@ -20,6 +26,16 @@ const router = createBrowserRouter([
 						<Home />
 					</AnimateRouting>
 				),
+			},
+		],
+	},
+	{
+		path: EPath.Login,
+		element: <Layout />,
+		children: [
+			{
+				path: EPath.Login,
+				element: <Login />,
 			},
 		],
 	},

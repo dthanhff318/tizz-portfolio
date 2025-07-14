@@ -4,6 +4,8 @@ enum EPath {
 	Projects = "/projects",
 	Contact = "/contact",
 	Career = "/career",
+	Login = "/login",
+	Auth = "/auth/callback",
 }
 
 export default EPath;
