@@ -104,7 +104,7 @@ function Files({
 		<div
 			data-slot="files"
 			className={cn(
-				"relative size-full rounded-xl bg-background overflow-auto",
+				"relative size-full rounded-xl bg-primary overflow-auto",
 				className
 			)}
 			{...props}

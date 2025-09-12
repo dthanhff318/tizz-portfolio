@@ -69,7 +69,7 @@ const ExperienceBlock = () => {
 												</div>
 												<p className="font-semibold">Products</p>
 											</div>
-											<div className="flex flex-col gap-2 pl-4">
+											<div className="flex flex-col gap-4 pl-4">
 												{career.projects?.map((project, index) => (
 													<div className="space-y-2" key={project.name}>
 														<div className="flex items-center gap-2">

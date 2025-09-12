@@ -34,6 +34,13 @@ const careerConfig: TCareer[] = [
 					"Has Shopify App Store Badge",
 				],
 			},
+			{
+				name: "Kiosko",
+				url: "https://kiosko.onmogaming.com/",
+				tags: ["React", "Tailwind", "Firebase FCM"],
+				description:
+					"Discover the latest news, opinions, and publications from top newspapers and magazines worldwide",
+			},
 		],
 	},
 	{
