@@ -8,7 +8,7 @@ const ProtectRoute = ({ children }: TProps) => {
 	const auth = false;
 	// Impliment logic check auth
 	if (!auth) {
-		return <Navigate replace to="/welcome" />;
+		return <Navigate replace to="/" />;
 	}
 	return children;
 };

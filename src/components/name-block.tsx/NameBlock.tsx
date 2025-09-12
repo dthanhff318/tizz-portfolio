@@ -1,5 +1,4 @@
 import { TypingText } from "@/components/animate-ui/text/typing";
-import { SpringElement } from "@/components/animate-ui/components/spring-element";
 import { SlidingNumber } from "@/components/animate-ui/text/sliding-number";
 
 const NameBlock = () => {
@@ -9,7 +8,7 @@ const NameBlock = () => {
 				<div className="flex items-center gap-2">
 					<TypingText
 						className="text-xl font-bold text-text-primary"
-						text="Dinh Duy Thanh"
+						text="Đinh Duy Thành"
 						delay={800}
 					/>
 				</div>
@@ -37,14 +36,12 @@ const NameBlock = () => {
 				</div>
 			</div>
 			<div className="border-l border-border-secondary ">
-				<SpringElement springClassName="stroke-0 fill-none">
-					<img
-						draggable={false}
-						src="/assets/avatar.png"
-						alt="avatar"
-						className="size-32 sm:size-40 cover rounded-[50%] object-cover z-1"
-					/>
-				</SpringElement>
+				<img
+					draggable={false}
+					src="/assets/avatar.png"
+					alt="avatar"
+					className="size-32 sm:size-40 cover rounded-[50%] object-cover z-1"
+				/>
 			</div>
 		</div>
 	);
