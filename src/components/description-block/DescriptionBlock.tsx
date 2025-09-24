@@ -1,4 +1,5 @@
 import { Github, Hammer, MapPin, SendHorizontal } from "lucide-react";
+import Terminal from "../terminal/Terminal";
 
 const DescriptionBlock = () => {
 	const configs = [
@@ -78,6 +79,20 @@ const DescriptionBlock = () => {
 						</div>
 					))}
 				</div>
+			</div>
+			<div
+				className="min-h-[31px] w-full"
+				style={{
+					backgroundImage: `
+                  linear-gradient(to right, rgba(83, 83, 83, 0.2) 1px, transparent 1px),
+                  linear-gradient(to bottom, rgba(83, 83, 83, 0.2) 1px, transparent 1px)
+                `,
+					backgroundSize: "10px 10px",
+					backgroundPosition: "center",
+				}}
+			></div>
+			<div className="p-2">
+				<Terminal />
 			</div>
 		</div>
 	);
