@@ -1,0 +1,134 @@
+.clock-block-container {
+	position: relative;
+	width: 100%;
+	height: auto;
+	background: transparent;
+}
+
+.clock-block-container:fullscreen {
+	background: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.clock-block {
+	--clock-size: 2vw;
+	--gap: calc(var(--clock-size) * 0.05);
+	--clock-segment-w: calc(var(--clock-size) * 4 + var(--gap) * 5);
+	--clock-segment-h: calc(var(--clock-size) * 6 + var(--gap) * 5);
+	font-family: sans-serif;
+	text-align: center;
+	display: flex;
+	gap: var(--gap);
+	align-items: center;
+	justify-content: center;
+	height: 30vh;
+	padding-left: calc(var(--clock-size) + var(--gap) * 2);
+}
+
+.clock-block-container:fullscreen .clock-block {
+	--clock-size: 3vw;
+	height: 100vh;
+	padding: 2rem;
+}
+
+.clock-block > div {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap);
+	width: var(--clock-segment-w);
+	height: var(--clock-segment-h);
+}
+
+.clock-block > div:nth-of-type(even) {
+	margin-right: var(--clock-size);
+}
+
+.clock {
+	--w: 47%;
+	--h: 3px;
+	--dur: 0.4s;
+	position: relative;
+	width: var(--clock-size);
+	height: var(--clock-size);
+	border-radius: 50%;
+	flex-shrink: 0;
+	background: transparent;
+}
+
+.clock::before,
+.clock::after {
+	position: absolute;
+	content: "";
+	top: calc(50% - var(--h) * 0.5);
+	left: 50%;
+	transform-origin: 0% 50%;
+	width: var(--w);
+	height: var(--h);
+	background: #ffffff;
+	border-radius: 9999px;
+	transition: calc(var(--dur) * 1s) ease-in-out;
+	transform: rotate(calc(var(--angle) * 1deg));
+}
+
+.clock::before {
+	--angle: var(--hour-angle);
+}
+
+.clock::after {
+	--angle: var(--minute-angle);
+}
+
+@media (max-width: 700px) {
+	.clock {
+		--h: 2px;
+		border: 1px solid white;
+	}
+}
+
+@media (max-width: 500px) {
+	.clock {
+		--h: 1px;
+		--w: 50%;
+	}
+}
+
+.fullscreen-button {
+	position: absolute;
+	bottom: 8px;
+	right: 8px;
+	width: 40px;
+	height: 40px;
+	border: none;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.8;
+	z-index: 10;
+}
+
+.fullscreen-button:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.fullscreen-button svg {
+	width: 24px;
+	height: 24px;
+}
+
+.clock-block-container:fullscreen .fullscreen-button {
+	bottom: 20px;
+	right: 20px;
+	width: 48px;
+	height: 48px;
+}
+
+.clock-block-container:fullscreen .fullscreen-button svg {
+	width: 28px;
+	height: 28px;
+}

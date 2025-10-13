@@ -10,10 +10,12 @@ import {
 import ProjectBlock from "@/components/project-block/ProjectBlock";
 import ExperienceBlock from "@/components/experience-block/ExperienceBlock";
 import DotBlock from "@/components/decorated-block/DotBlock";
+import ClockBlock from "@/components/clock-block/ClockBlock";
 
 const DynamicRowLayout = () => {
 	const contentBlocks = [
 		<LogoBlock />,
+		<ClockBlock />,
 		<NameBlock />,
 		<DescriptionBlock />,
 		<CrossBlock />,
