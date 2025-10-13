@@ -76,7 +76,7 @@ const Terminal: React.FC = () => {
 	}, [commands]);
 
 	useEffect(() => {
-		inputRef.current?.focus();
+		inputRef.current?.focus({ preventScroll: true });
 	}, []);
 
 	const handleTerminalClick = () => {

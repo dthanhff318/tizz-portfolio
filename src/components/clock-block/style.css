@@ -3,6 +3,11 @@
 	width: 100%;
 	height: auto;
 	background: transparent;
+	overflow: visible;
+}
+
+.clock-block-container:focus {
+	outline: none;
 }
 
 .clock-block-container:fullscreen {
@@ -13,7 +18,7 @@
 }
 
 .clock-block {
-	--clock-size: 2vw;
+	--clock-size: 1.5vw;
 	--gap: calc(var(--clock-size) * 0.05);
 	--clock-segment-w: calc(var(--clock-size) * 4 + var(--gap) * 5);
 	--clock-segment-h: calc(var(--clock-size) * 6 + var(--gap) * 5);
@@ -81,9 +86,12 @@
 }
 
 @media (max-width: 700px) {
+	.clock-block {
+		--clock-size: 2vw;
+		height: 20vh;
+	}
 	.clock {
-		--h: 2px;
-		border: 1px solid white;
+		--h: 1px;
 	}
 }
 
@@ -109,6 +117,11 @@
 	justify-content: center;
 	opacity: 0.8;
 	z-index: 10;
+	pointer-events: auto;
+}
+
+.fullscreen-button:focus {
+	outline: none;
 }
 
 .fullscreen-button:hover {
