@@ -15,7 +15,8 @@ import {
 	Redis,
 	Redux,
 	Docker,
-	ExpressJsDark,
+	ExpressJsLight,
+	Supabase,
 } from "developer-icons";
 const TechStackBlock = () => {
 	const feTechStacks = [
@@ -46,7 +47,7 @@ const TechStackBlock = () => {
 	];
 	const beTechStacks = [
 		{
-			icon: <ExpressJsDark />,
+			icon: <ExpressJsLight />,
 			tooltip: "Express.js",
 		},
 		{
@@ -60,6 +61,10 @@ const TechStackBlock = () => {
 		{
 			icon: <Redis />,
 			tooltip: "Redis",
+		},
+		{
+			icon: <Supabase />,
+			tooltip: "Supabase",
 		},
 	];
 	const devOpsTechStacks = [

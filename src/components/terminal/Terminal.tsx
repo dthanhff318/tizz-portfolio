@@ -99,7 +99,7 @@ const Terminal: React.FC = () => {
 
 			<div
 				ref={terminalRef}
-				className="h-64 overflow-y-auto p-3 font-mono text-xs cursor-text bg-[#1a1a1c]"
+				className="h-48 overflow-y-auto p-3 font-mono text-xs cursor-text bg-[#1a1a1c]"
 				onClick={handleTerminalClick}
 			>
 				{commands.map((cmd, index) => (
