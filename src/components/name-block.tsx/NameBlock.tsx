@@ -38,9 +38,9 @@ const NameBlock = () => {
 			<div className="border-l border-border-secondary ">
 				<img
 					draggable={false}
-					src="/assets/avatar.webp"
+					src="/assets/avatar.png"
 					alt="avatar"
-					className="size-32 sm:size-40 cover rounded-[50%] object-cover z-1"
+					className="size-32 sm:size-40 cover rounded-[50%] object-fit z-1 object-left"
 				/>
 			</div>
 		</div>

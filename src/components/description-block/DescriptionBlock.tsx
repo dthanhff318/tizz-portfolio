@@ -1,5 +1,4 @@
 import { Github, Hammer, MapPin, SendHorizontal } from "lucide-react";
-import Terminal from "../terminal/Terminal";
 
 const DescriptionBlock = () => {
 	const configs = [
@@ -7,7 +6,7 @@ const DescriptionBlock = () => {
 			icon: <Hammer className="size-4 text-text-primary" />,
 			text: (
 				<p className="text-text-secondary text-sm">
-					Web developer at{" "}
+					Developer at{" "}
 					<a
 						href="https://nelisoftwares.com"
 						target="_blank"
@@ -91,9 +90,6 @@ const DescriptionBlock = () => {
 					backgroundPosition: "center",
 				}}
 			></div>
-			<div className="p-2">
-				<Terminal />
-			</div>
 		</div>
 	);
 };

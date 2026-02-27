@@ -31,7 +31,6 @@ const careerConfig: TCareer[] = [
 				achievements: [
 					"Top 10 Shopify apps for crowdfunding",
 					"Partner of UwU Market, Spiceology, Lootbloc, and more",
-					"Has Shopify App Store Badge",
 				],
 			},
 			{

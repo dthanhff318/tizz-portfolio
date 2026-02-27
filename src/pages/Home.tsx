@@ -11,6 +11,7 @@ import ProjectBlock from "@/components/project-block/ProjectBlock";
 import ExperienceBlock from "@/components/experience-block/ExperienceBlock";
 import DotBlock from "@/components/decorated-block/DotBlock";
 import ClockBlock from "@/components/clock-block/ClockBlock";
+import ThanksBlock from "@/components/thanks-block/ThanksBlock";
 
 const DynamicRowLayout = () => {
 	const contentBlocks = [
@@ -25,6 +26,7 @@ const DynamicRowLayout = () => {
 		<DotBlock />,
 		<ProjectBlock />,
 		<DotBlock />,
+		<ThanksBlock />,
 	];
 
 	return (
