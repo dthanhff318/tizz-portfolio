@@ -27,6 +27,7 @@ const DynamicRowLayout = () => {
 		<ProjectBlock />,
 		<DotBlock />,
 		<ThanksBlock />,
+		<DotBlock />,
 	];
 
 	return (
