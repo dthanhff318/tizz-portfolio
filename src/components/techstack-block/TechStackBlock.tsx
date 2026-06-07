@@ -17,6 +17,8 @@ import {
 	Docker,
 	ExpressJsLight,
 	Supabase,
+	Terraform,
+	AWS,
 } from "developer-icons";
 const TechStackBlock = () => {
 	const feTechStacks = [
@@ -71,6 +73,14 @@ const TechStackBlock = () => {
 		{
 			icon: <Docker />,
 			tooltip: "Docker",
+		},
+		{
+			icon: <Terraform />,
+			tooltip: "Terraform",
+		},
+		{
+			icon: <AWS />,
+			tooltip: "AWS",
 		},
 	];
 	return (

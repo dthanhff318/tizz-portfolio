@@ -34,6 +34,18 @@ const careerConfig: TCareer[] = [
 				],
 			},
 			{
+				name: "ScreenMindr",
+				tags: [
+					"React Native",
+					"React",
+					"NestJS",
+					"Redis",
+					"PostgreSQL",
+				],
+				description:
+					"A cross-platform (web & mobile) parental control app that allows parents to assign tasks to kids, review completion, and reward them. Parents can also control the kid's phone, enabling device access once assigned tasks are completed.",
+			},
+			{
 				name: "Kiosko",
 				url: "https://kiosko.onmogaming.com/",
 				tags: ["React", "Tailwind", "Firebase FCM"],
