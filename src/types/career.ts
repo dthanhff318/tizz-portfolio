@@ -8,7 +8,7 @@ export type TCareer = {
 	role?: string;
 	projects?: {
 		name: string;
-		url: string;
+		url?: string;
 		tags?: string[];
 		description?: string;
 		achievements?: string[];

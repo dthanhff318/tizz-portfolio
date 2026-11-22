@@ -35,15 +35,29 @@ const careerConfig: TCareer[] = [
 			},
 			{
 				name: "ScreenMindr",
+				url: "https://screenmindr.com/",
 				tags: [
 					"React Native",
 					"React",
+					"Vite",
 					"NestJS",
-					"Redis",
+					"Prisma",
 					"PostgreSQL",
+					"Redis",
+					"Firebase FCM",
+					"Docker",
+					"Terraform",
+					"AWS",
+					"GitHub Actions",
 				],
 				description:
 					"A cross-platform (web & mobile) parental control app that allows parents to assign tasks to kids, review completion, and reward them. Parents can also control the kid's phone, enabling device access once assigned tasks are completed.",
+				achievements: [
+					"Built AWS infra as code with Terraform & Terragrunt",
+					"Backend on ECS Fargate + ALB, RDS PostgreSQL, ElastiCache",
+					"Web on S3 + CloudFront, email via SES, DNS via Route 53",
+					"CI/CD with GitHub Actions (OIDC) to ECR & ECS",
+				],
 			},
 			{
 				name: "Kiosko",

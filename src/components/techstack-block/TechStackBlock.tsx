@@ -19,6 +19,11 @@ import {
 	Supabase,
 	Terraform,
 	AWS,
+	NestJS,
+	NodeJs,
+	Prisma,
+	Firebase,
+	GitHubLight,
 } from "developer-icons";
 const TechStackBlock = () => {
 	const feTechStacks = [
@@ -49,8 +54,20 @@ const TechStackBlock = () => {
 	];
 	const beTechStacks = [
 		{
+			icon: <NodeJs />,
+			tooltip: "Node.js",
+		},
+		{
+			icon: <NestJS />,
+			tooltip: "NestJS",
+		},
+		{
 			icon: <ExpressJsLight />,
 			tooltip: "Express.js",
+		},
+		{
+			icon: <Prisma />,
+			tooltip: "Prisma",
 		},
 		{
 			icon: <MongoDB />,
@@ -68,6 +85,10 @@ const TechStackBlock = () => {
 			icon: <Supabase />,
 			tooltip: "Supabase",
 		},
+		{
+			icon: <Firebase />,
+			tooltip: "Firebase",
+		},
 	];
 	const devOpsTechStacks = [
 		{
@@ -80,7 +101,12 @@ const TechStackBlock = () => {
 		},
 		{
 			icon: <AWS />,
-			tooltip: "AWS",
+			tooltip:
+				"AWS: ECS Fargate, ECR, ALB, RDS, ElastiCache, S3, CloudFront, SES, Route 53, IAM, KMS",
+		},
+		{
+			icon: <GitHubLight />,
+			tooltip: "GitHub Actions",
 		},
 	];
 	return (
